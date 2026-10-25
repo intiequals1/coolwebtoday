@@ -2,19 +2,52 @@
   "stand": "2026-10-25",
   "hinweis": "Angaben ohne Gewähr. Funktionen, Tarife und Bedingungen ändern sich; bitte vor der Nutzung beim Anbieter prüfen. Der Einstieg ist eine Einschätzung der Werkstatt.",
   "kategorien": [
-    { "id": "ki", "label": "KI & Sprache" },
-    { "id": "automatisierung", "label": "Automatisierung" },
-    { "id": "daten", "label": "Daten & Auswertung" },
-    { "id": "wissen", "label": "Wissen & Notizen" },
-    { "id": "gestalten", "label": "Gestalten & Prototypen" },
-    { "id": "zusammenarbeit", "label": "Zusammenarbeit" },
-    { "id": "barrierefreiheit", "label": "Barrierefreiheit prüfen" }
+    {
+      "id": "ki",
+      "label": "KI & Sprache"
+    },
+    {
+      "id": "automatisierung",
+      "label": "Automatisierung"
+    },
+    {
+      "id": "daten",
+      "label": "Daten & Auswertung"
+    },
+    {
+      "id": "wissen",
+      "label": "Wissen & Notizen"
+    },
+    {
+      "id": "gestalten",
+      "label": "Gestalten & Prototypen"
+    },
+    {
+      "id": "zusammenarbeit",
+      "label": "Zusammenarbeit"
+    },
+    {
+      "id": "barrierefreiheit",
+      "label": "Barrierefreiheit prüfen"
+    }
   ],
   "schritte": [
-    { "id": "klaeren", "label": "Idee klären" },
-    { "id": "bauen", "label": "Bauen & ausprobieren" },
-    { "id": "pruefen", "label": "Prüfen & auswerten" },
-    { "id": "teilen", "label": "Dokumentieren & teilen" }
+    {
+      "id": "klaeren",
+      "label": "Idee klären"
+    },
+    {
+      "id": "bauen",
+      "label": "Bauen & ausprobieren"
+    },
+    {
+      "id": "pruefen",
+      "label": "Prüfen & auswerten"
+    },
+    {
+      "id": "teilen",
+      "label": "Dokumentieren & teilen"
+    }
   ],
   "eigene": [
     {
@@ -22,21 +55,38 @@
       "name": "Ideen-Steckbrief",
       "wofuer": "Halte eine Idee in vier Feldern fest: Ausgangsfrage, Annahmen, erster Schritt, was offen bleibt.",
       "url": "werkzeuge/steckbrief.html",
-      "schritte": ["klaeren"]
+      "schritte": [
+        "klaeren"
+      ]
     },
     {
       "id": "logbuch",
       "name": "Hürden-Logbuch",
       "wofuer": "Notiere, wo du beim Ausprobieren hängen bleibst und was geholfen hat. Hängenbleiben sagt etwas über das Werkzeug, nicht über dich.",
       "url": "werkzeuge/logbuch.html",
-      "schritte": ["pruefen", "teilen"]
+      "schritte": [
+        "pruefen",
+        "teilen"
+      ]
     },
     {
       "id": "ki-auftrag",
       "name": "KI-Auftrag-Baukasten",
       "wofuer": "Formuliere einen klaren Auftrag an einen KI-Assistenten und lege vorher fest, woran du das Ergebnis prüfst.",
       "url": "werkzeuge/ki-auftrag.html",
-      "schritte": ["bauen"]
+      "schritte": [
+        "bauen"
+      ]
+    },
+    {
+      "id": "ablauf",
+      "name": "Ablauf-Werkbank",
+      "wofuer": "Schreib deine Arbeitsschritte auf und entscheide bei jedem Schritt: selbst machen, unterstützen lassen oder automatisieren.",
+      "url": "werkzeuge/ablauf.html",
+      "schritte": [
+        "klaeren",
+        "bauen"
+      ]
     }
   ],
   "werkzeuge": [
@@ -45,7 +95,9 @@
       "name": "Ollama",
       "kategorie": "ki",
       "wofuer": "Sprachmodelle auf dem eigenen Computer ausführen. Texte verlassen das Gerät nicht.",
-      "schritte": ["bauen"],
+      "schritte": [
+        "bauen"
+      ],
       "betrieb": "lokal",
       "lizenz": "open-source",
       "konto": "nein",
@@ -59,7 +111,9 @@
       "name": "LM Studio",
       "kategorie": "ki",
       "wofuer": "Sprachmodelle herunterladen und lokal in einem Chatfenster nutzen, ohne Kommandozeile.",
-      "schritte": ["bauen"],
+      "schritte": [
+        "bauen"
+      ],
       "betrieb": "lokal",
       "lizenz": "proprietaer",
       "konto": "nein",
@@ -73,7 +127,10 @@
       "name": "Le Chat (Mistral AI)",
       "kategorie": "ki",
       "wofuer": "KI-Assistent eines französischen Anbieters für Texte, Fragen und Zusammenfassungen.",
-      "schritte": ["klaeren", "bauen"],
+      "schritte": [
+        "klaeren",
+        "bauen"
+      ],
       "betrieb": "cloud",
       "lizenz": "proprietaer",
       "konto": "optional",
@@ -87,7 +144,10 @@
       "name": "ChatGPT (OpenAI)",
       "kategorie": "ki",
       "wofuer": "KI-Assistent für Texte, Fragen, Zusammenfassungen und erste Entwürfe.",
-      "schritte": ["klaeren", "bauen"],
+      "schritte": [
+        "klaeren",
+        "bauen"
+      ],
       "betrieb": "cloud",
       "lizenz": "proprietaer",
       "konto": "optional",
@@ -101,7 +161,10 @@
       "name": "Claude (Anthropic)",
       "kategorie": "ki",
       "wofuer": "KI-Assistent für längere Texte, Analysen, Dokumente und Programmierhilfe.",
-      "schritte": ["klaeren", "bauen"],
+      "schritte": [
+        "klaeren",
+        "bauen"
+      ],
       "betrieb": "cloud",
       "lizenz": "proprietaer",
       "konto": "ja",
@@ -115,7 +178,9 @@
       "name": "DeepL Übersetzer",
       "kategorie": "ki",
       "wofuer": "Texte und Dokumente übersetzen, etwa um eine Idee mehrsprachig vorzustellen.",
-      "schritte": ["teilen"],
+      "schritte": [
+        "teilen"
+      ],
       "betrieb": "cloud",
       "lizenz": "proprietaer",
       "konto": "optional",
@@ -129,7 +194,10 @@
       "name": "Buzz",
       "kategorie": "ki",
       "wofuer": "Gespräche und Sprachnotizen offline in Text umwandeln, auf Basis des Modells Whisper.",
-      "schritte": ["klaeren", "teilen"],
+      "schritte": [
+        "klaeren",
+        "teilen"
+      ],
       "betrieb": "lokal",
       "lizenz": "open-source",
       "konto": "nein",
@@ -143,7 +211,9 @@
       "name": "Kurzbefehle (Apple)",
       "kategorie": "automatisierung",
       "wofuer": "Wiederkehrende Abläufe auf iPhone, iPad und Mac aus Bausteinen zusammenstellen.",
-      "schritte": ["bauen"],
+      "schritte": [
+        "bauen"
+      ],
       "betrieb": "lokal",
       "lizenz": "proprietaer",
       "konto": "nein",
@@ -157,7 +227,9 @@
       "name": "n8n",
       "kategorie": "automatisierung",
       "wofuer": "Abläufe zwischen Diensten verbinden, etwa Formular, Tabelle und E-Mail.",
-      "schritte": ["bauen"],
+      "schritte": [
+        "bauen"
+      ],
       "betrieb": "selbst-hosten",
       "lizenz": "quelloffen",
       "konto": "optional",
@@ -171,7 +243,9 @@
       "name": "Node-RED",
       "kategorie": "automatisierung",
       "wofuer": "Datenflüsse und Geräte grafisch verbinden, auch auf kleinen Rechnern wie dem Raspberry Pi.",
-      "schritte": ["bauen"],
+      "schritte": [
+        "bauen"
+      ],
       "betrieb": "selbst-hosten",
       "lizenz": "open-source",
       "konto": "nein",
@@ -185,7 +259,9 @@
       "name": "Make",
       "kategorie": "automatisierung",
       "wofuer": "Abläufe zwischen Online-Diensten im Browser zusammenklicken.",
-      "schritte": ["bauen"],
+      "schritte": [
+        "bauen"
+      ],
       "betrieb": "cloud",
       "lizenz": "proprietaer",
       "konto": "ja",
@@ -199,7 +275,11 @@
       "name": "LibreOffice",
       "kategorie": "daten",
       "wofuer": "Tabellen, Texte und Präsentationen bearbeiten, auch in offenen Dateiformaten.",
-      "schritte": ["bauen", "pruefen", "teilen"],
+      "schritte": [
+        "bauen",
+        "pruefen",
+        "teilen"
+      ],
       "betrieb": "lokal",
       "lizenz": "open-source",
       "konto": "nein",
@@ -213,7 +293,10 @@
       "name": "RAWGraphs",
       "kategorie": "daten",
       "wofuer": "Aus einer Tabelle Diagramme gestalten und als Bild exportieren.",
-      "schritte": ["pruefen", "teilen"],
+      "schritte": [
+        "pruefen",
+        "teilen"
+      ],
       "betrieb": "browser",
       "lizenz": "open-source",
       "konto": "nein",
@@ -227,7 +310,9 @@
       "name": "KNIME Analytics Platform",
       "kategorie": "daten",
       "wofuer": "Datenauswertungen aus Bausteinen zusammensetzen, ohne zu programmieren.",
-      "schritte": ["pruefen"],
+      "schritte": [
+        "pruefen"
+      ],
       "betrieb": "lokal",
       "lizenz": "open-source",
       "konto": "nein",
@@ -241,7 +326,9 @@
       "name": "JupyterLite",
       "kategorie": "daten",
       "wofuer": "Python-Notebooks direkt im Browser ausprobieren, ohne Installation.",
-      "schritte": ["pruefen"],
+      "schritte": [
+        "pruefen"
+      ],
       "betrieb": "browser",
       "lizenz": "open-source",
       "konto": "nein",
@@ -255,7 +342,10 @@
       "name": "Power BI Desktop",
       "kategorie": "daten",
       "wofuer": "Berichte und Dashboards aus mehreren Datenquellen bauen.",
-      "schritte": ["pruefen", "teilen"],
+      "schritte": [
+        "pruefen",
+        "teilen"
+      ],
       "betrieb": "lokal",
       "lizenz": "proprietaer",
       "konto": "optional",
@@ -269,7 +359,10 @@
       "name": "Obsidian",
       "kategorie": "wissen",
       "wofuer": "Notizen als verlinkte Textdateien auf dem eigenen Gerät führen.",
-      "schritte": ["klaeren", "teilen"],
+      "schritte": [
+        "klaeren",
+        "teilen"
+      ],
       "betrieb": "lokal",
       "lizenz": "proprietaer",
       "konto": "nein",
@@ -283,7 +376,9 @@
       "name": "Joplin",
       "kategorie": "wissen",
       "wofuer": "Notizen und Aufgaben sammeln und bei Bedarf verschlüsselt synchronisieren.",
-      "schritte": ["klaeren"],
+      "schritte": [
+        "klaeren"
+      ],
       "betrieb": "lokal",
       "lizenz": "open-source",
       "konto": "nein",
@@ -297,7 +392,10 @@
       "name": "Zotero",
       "kategorie": "wissen",
       "wofuer": "Quellen sammeln, ordnen und korrekt zitieren.",
-      "schritte": ["klaeren", "teilen"],
+      "schritte": [
+        "klaeren",
+        "teilen"
+      ],
       "betrieb": "lokal",
       "lizenz": "open-source",
       "konto": "optional",
@@ -311,7 +409,9 @@
       "name": "Excalidraw",
       "kategorie": "gestalten",
       "wofuer": "Ideen, Abläufe und Skizzen im Browser zeichnen, auch gemeinsam.",
-      "schritte": ["klaeren"],
+      "schritte": [
+        "klaeren"
+      ],
       "betrieb": "browser",
       "lizenz": "open-source",
       "konto": "nein",
@@ -325,7 +425,10 @@
       "name": "draw.io (diagrams.net)",
       "kategorie": "gestalten",
       "wofuer": "Ablaufdiagramme, Organigramme und Pläne erstellen.",
-      "schritte": ["klaeren", "teilen"],
+      "schritte": [
+        "klaeren",
+        "teilen"
+      ],
       "betrieb": "browser",
       "lizenz": "open-source",
       "konto": "nein",
@@ -339,7 +442,10 @@
       "name": "Penpot",
       "kategorie": "gestalten",
       "wofuer": "Bildschirme gestalten und klickbare Prototypen bauen.",
-      "schritte": ["bauen", "pruefen"],
+      "schritte": [
+        "bauen",
+        "pruefen"
+      ],
       "betrieb": "browser",
       "lizenz": "open-source",
       "konto": "ja",
@@ -353,7 +459,9 @@
       "name": "CryptPad",
       "kategorie": "zusammenarbeit",
       "wofuer": "Dokumente, Tabellen und Formulare Ende-zu-Ende-verschlüsselt gemeinsam bearbeiten.",
-      "schritte": ["teilen"],
+      "schritte": [
+        "teilen"
+      ],
       "betrieb": "browser",
       "lizenz": "open-source",
       "konto": "optional",
@@ -367,7 +475,9 @@
       "name": "GitHub",
       "kategorie": "zusammenarbeit",
       "wofuer": "Aufgaben, Projektboards und Code gemeinsam verwalten. Hier liegen die Mitmach-Aufgaben von digitalpath.",
-      "schritte": ["teilen"],
+      "schritte": [
+        "teilen"
+      ],
       "betrieb": "cloud",
       "lizenz": "proprietaer",
       "konto": "ja",
@@ -381,7 +491,9 @@
       "name": "Nextcloud",
       "kategorie": "zusammenarbeit",
       "wofuer": "Dateien, Kalender und gemeinsames Arbeiten auf einem eigenen oder gemieteten Server.",
-      "schritte": ["teilen"],
+      "schritte": [
+        "teilen"
+      ],
       "betrieb": "selbst-hosten",
       "lizenz": "open-source",
       "konto": "ja",
@@ -395,7 +507,9 @@
       "name": "WAVE",
       "kategorie": "barrierefreiheit",
       "wofuer": "Webseiten und Prototypen automatisch auf Barrieren prüfen.",
-      "schritte": ["pruefen"],
+      "schritte": [
+        "pruefen"
+      ],
       "betrieb": "browser",
       "lizenz": "proprietaer",
       "konto": "nein",
@@ -409,7 +523,9 @@
       "name": "NVDA",
       "kategorie": "barrierefreiheit",
       "wofuer": "Screenreader für Windows. Zeigt, wie Inhalte vorgelesen und bedient werden.",
-      "schritte": ["pruefen"],
+      "schritte": [
+        "pruefen"
+      ],
       "betrieb": "lokal",
       "lizenz": "open-source",
       "konto": "nein",

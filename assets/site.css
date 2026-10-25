@@ -216,10 +216,10 @@ main { display: block; }
 .tag span { font-size: var(--step--1); color: var(--ink-soft); line-height: 1.4; }
 .tag.count { background: var(--mark); color: var(--mark-ink); }
 .tag.count span { color: var(--mark-ink); }
-.tag:nth-child(1) { --tilt: -2.5deg; }
-.tag:nth-child(2) { --tilt: 1.8deg; }
-.tag:nth-child(3) { --tilt: -1.2deg; }
-.tag:nth-child(4) { --tilt: 2.4deg; }
+.tags li:nth-child(1) .tag { --tilt: -2.5deg; }
+.tags li:nth-child(2) .tag { --tilt: 1.8deg; }
+.tags li:nth-child(3) .tag { --tilt: -1.2deg; }
+.tags li:nth-child(4) .tag { --tilt: 2.4deg; }
 a.tag:hover, a.tag:focus-visible { --tilt: 0deg; }
 @media (prefers-reduced-motion: reduce) { .tag { transition: none; } }
 
@@ -377,3 +377,13 @@ a.tag:hover, a.tag:focus-visible { --tilt: 0deg; }
 .tool-date { font-size: 0.75rem; color: var(--ink-soft); margin-top: -0.25rem; }
 .btn:disabled { opacity: 0.45; cursor: not-allowed; filter: none; }
 .journey:target, .journey.focus, .tool.focus { outline: 3px solid var(--mark); outline-offset: 3px; }
+
+/* Ablauf-Werkbank */
+.steps { list-style: none; margin: 0.4rem 0 0; padding: 0; display: grid; gap: 0.8rem; }
+.step { display: grid; gap: 0.6rem; padding: 0.9rem 1rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--ground); min-width: 0; }
+.step-mode { border: 0; margin: 0; padding: 0; min-width: 0; }
+.step-tools { gap: 0.4rem; }
+
+.orte { margin: 0.6rem 0; font-size: var(--step--1); }
+.orte span { font-family: var(--mono); font-size: 0.75rem; color: var(--ink-soft); }
+.tags li:nth-child(5) .tag { --tilt: -1.6deg; }

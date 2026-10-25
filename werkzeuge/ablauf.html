@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="de" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ablauf-Werkbank · CoolWebToday</title>
+<meta name="description" content="Schreib deine Arbeitsschritte auf und entscheide bei jedem Schritt selbst: selbst machen, unterstützen lassen oder automatisieren. Läuft nur in deinem Browser.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <svg class="brand-mark" viewBox="0 0 30 30" aria-hidden="true" focusable="false"><rect class="bm-board" x="1" y="1" width="28" height="28" rx="5"/><g class="bm-holes"><circle cx="8" cy="8" r="2"/><circle cx="15" cy="8" r="2"/><circle cx="22" cy="8" r="2"/><circle cx="8" cy="15" r="2"/><circle cx="22" cy="15" r="2"/><circle cx="8" cy="22" r="2"/><circle cx="15" cy="22" r="2"/><circle cx="22" cy="22" r="2"/></g><circle class="bm-peg" cx="15" cy="15" r="3.4"/></svg>
+      CoolWebToday
+    </a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav">
+        <li><a href="../werkstatt.html" aria-current="page">Toolwerkstatt</a></li>
+        <li><a href="../journeys.html">Journeys</a></li>
+        <li><a href="../index.html#vorhaben">Das Vorhaben</a></li>
+        <li><a class="ext" href="https://www.digitalpath.at/#labor" rel="noopener" target="_blank">digitalpath</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <p class="eyebrow"><a href="../werkstatt.html">Toolwerkstatt</a> · Werkzeug der Werkstatt</p>
+        <h1>Ablauf-Werkbank</h1>
+        <p class="lead">Schreib die Schritte deiner Arbeit auf und entscheide bei jedem Schritt selbst: selbst machen, unterstützen lassen oder automatisieren. Die Technik soll sich nach dir richten, nicht umgekehrt.</p>
+        <div class="notice local"><p><strong>Bleibt auf deinem Gerät.</strong> Dein Ablauf wird nur in diesem Browser gespeichert. Du brauchst keine Angaben zu Gesundheit oder Diagnosen zu machen.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap tool-page">
+      <form class="panel" id="form" aria-labelledby="form-titel">
+        <h2 id="form-titel">Dein Ablauf</h2>
+        <p class="draft-banner" id="beispiel-hinweis" hidden><strong>Beispiel.</strong> Qualitätskontrolle in einem kleinen Versandlager. Überschreib die Schritte oder starte leer.</p>
+        <div class="field">
+          <label for="titel">Welche Tätigkeit?</label>
+          <input id="titel" type="text" autocomplete="off">
+        </div>
+
+        <fieldset class="field" style="border:0;padding:0;margin:0">
+          <legend class="label">Schritte, so wie du sie heute machst</legend>
+          <span class="help">Pro Schritt entscheidest du, wie er künftig laufen soll.</span>
+          <ol class="steps" id="schritte"></ol>
+          <div class="btn-row"><button class="btn ghost small" type="button" id="schritt-neu">Schritt hinzufügen</button></div>
+        </fieldset>
+
+        <fieldset class="field" style="border:0;padding:0;margin:0">
+          <legend class="label">Wie sollen Arbeitsanweisungen aussehen?</legend>
+          <div class="check-grid chips" id="darstellung"></div>
+        </fieldset>
+
+        <div class="field">
+          <label for="grenzen">Was soll bewusst von Hand bleiben, und warum?</label>
+          <textarea id="grenzen" rows="3"></textarea>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn quiet small" type="button" id="leeren">Leeren</button>
+          <button class="btn quiet small" type="button" id="beispiel">Beispiel laden</button>
+        </div>
+        <div class="confirm" id="leeren-bestaetigen" hidden>
+          <span>Alle Schritte und Angaben löschen?</span>
+          <button class="btn small" type="button" id="leeren-ja">Ja, leeren</button>
+          <button class="btn quiet small" type="button" id="leeren-nein">Abbrechen</button>
+        </div>
+      </form>
+
+      <div class="panel" aria-labelledby="out-titel">
+        <h2 id="out-titel">Vorher und nachher</h2>
+        <p class="result-count" id="bilanz" aria-live="polite"></p>
+        <pre class="output" id="ausgabe" tabindex="0" aria-label="Ablauf als Markdown"></pre>
+        <div class="btn-row">
+          <button class="btn small" type="button" id="kopieren">Kopieren</button>
+          <button class="btn ghost small" type="button" id="speichern">Als Markdown-Datei speichern</button>
+        </div>
+        <p class="feedback" id="feedback" aria-live="polite"></p>
+        <p class="muted">Mit dem Ergebnis kannst du die Journey <a href="../journeys.html#journey-arbeit-mitgestalten">„Die eigene Arbeit mitgestalten“</a> anfragen oder es mit deinem Team besprechen.</p>
+        <p class="muted">Hintergrund: Die Werkbank stammt aus dem Vorhaben <a href="https://www.digitalpath.at/#protein-hub-24" rel="noopener" target="_blank">PROTEIN HUB 24 im Projektlabor digitalpath</a>. Dort geht es darum, dass Beschäftigte mitbestimmen, was automatisiert wird.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <p><strong>CoolWebToday</strong> ist ein Vorhaben von Claudiu Dangulea, Wien.</p>
+      <p class="orte">Drei Orte: <a href="https://www.dangulea.at" rel="noopener" target="_blank">dangulea.at</a> <span>Person</span> · <a href="https://www.digitalpath.at" rel="noopener" target="_blank">digitalpath.at</a> <span>Projektlabor</span> · <strong>coolwebtoday.org</strong> <span>Werkstatt</span></p>
+      <small>Diese Seite entstand mit KI-Unterstützung. Sie setzt keine Cookies, kein Tracking und lädt keine externen Dienste.</small>
+    </div>
+    <div>
+      <ul class="foot-links">
+        <li><a href="../impressum.html">Impressum</a></li>
+        <li><a href="../datenschutz.html">Datenschutz</a></li>
+        <li><a href="../agb.html">AGB</a></li>
+        <li><a href="../widerruf.html">Widerrufsrecht</a></li>
+      </ul>
+      <small>Stand: <span data-stand>25. Oktober 2026</span></small>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/site.js"></script>
+<script>
+(function () {
+  "use strict";
+  var KEY = "cwt.ablauf.v1";
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = CWT.esc;
+  var MODI = [
+    { id: "selbst", label: "Selbst machen" },
+    { id: "unterstuetzt", label: "Unterstützen lassen" },
+    { id: "automatisch", label: "Automatisieren" }
+  ];
+  var DARSTELLUNG = ["Kurzer Text", "Große Schrift", "Symbole und Bilder", "Vorlesen", "Tonsignale", "Ein Schritt pro Bildschirm", "Farben als Hinweis"];
+  var BEISPIEL = {
+    titel: "Qualitätskontrolle zusammengestellter Bestellungen",
+    schritte: [
+      { text: "Produktnummer auf der Packung lesen", modus: "automatisch", wie: "Packung scannen statt lange Nummern lesen" },
+      { text: "Passende Packung im Regal suchen", modus: "unterstuetzt", wie: "Das richtige Fach leuchtet auf" },
+      { text: "Artikel mit der Bestellung vergleichen", modus: "unterstuetzt", wie: "Produktbild und Name groß anzeigen" },
+      { text: "Abweichungen beurteilen", modus: "selbst", wie: "" },
+      { text: "Kontrolle dokumentieren", modus: "automatisch", wie: "Wird beim Bestätigen mitgespeichert" },
+      { text: "Übergabe an das Abholfach quittieren", modus: "selbst", wie: "" }
+    ],
+    darstellung: ["Große Schrift", "Symbole und Bilder", "Vorlesen"],
+    grenzen: "Abweichungen beurteile ich selbst, weil beschädigte Packungen oft nur beim Hinsehen auffallen.",
+    beispiel: true
+  };
+  var state = null;
+
+  function stepRow(s, i, n) {
+    var name = "modus-" + i;
+    var radios = MODI.map(function (m) {
+      var id = name + "-" + m.id;
+      return '<input class="chip-input" type="radio" name="' + name + '" id="' + id + '" value="' + m.id + '"' + (s.modus === m.id ? " checked" : "") + '>' +
+        '<label class="chip-label" for="' + id + '">' + m.label + '</label>';
+    }).join("");
+    return '<li class="step" data-i="' + i + '">' +
+      '<div class="field"><label for="s-text-' + i + '">Schritt ' + (i + 1) + '</label>' +
+      '<input id="s-text-' + i + '" data-k="text" type="text" value="' + esc(s.text) + '" autocomplete="off"></div>' +
+      '<fieldset class="step-mode"><legend class="sr-only">Wie soll Schritt ' + (i + 1) + ' künftig laufen?</legend><div class="chips">' + radios + '</div></fieldset>' +
+      '<div class="field"' + (s.modus === "selbst" ? ' hidden' : '') + '><label for="s-wie-' + i + '">Wie genau?</label>' +
+      '<input id="s-wie-' + i + '" data-k="wie" type="text" value="' + esc(s.wie || "") + '" autocomplete="off" placeholder="z. B. scannen, vorlesen, Fach leuchtet auf"></div>' +
+      '<div class="btn-row step-tools">' +
+        '<button class="btn quiet small" type="button" data-act="hoch"' + (i === 0 ? " disabled" : "") + '>Nach oben</button>' +
+        '<button class="btn quiet small" type="button" data-act="runter"' + (i === n - 1 ? " disabled" : "") + '>Nach unten</button>' +
+        '<button class="btn quiet small" type="button" data-act="weg">Entfernen</button>' +
+      '</div></li>';
+  }
+
+  function render() {
+    var n = state.schritte.length;
+    $("schritte").innerHTML = state.schritte.map(function (s, i) { return stepRow(s, i, n); }).join("");
+    $("titel").value = state.titel || "";
+    $("grenzen").value = state.grenzen || "";
+    document.querySelectorAll("#darstellung input").forEach(function (c) { c.checked = (state.darstellung || []).indexOf(c.value) !== -1; });
+    $("beispiel-hinweis").hidden = !state.beispiel;
+    output();
+  }
+
+  function label(id) { for (var i = 0; i < MODI.length; i++) if (MODI[i].id === id) return MODI[i].label; return ""; }
+
+  function output() {
+    var s = state.schritte.filter(function (x) { return (x.text || "").trim(); });
+    var count = { selbst: 0, unterstuetzt: 0, automatisch: 0 };
+    s.forEach(function (x) { if (count[x.modus] !== undefined) count[x.modus]++; });
+    $("bilanz").textContent = s.length ? (count.selbst + " selbst · " + count.unterstuetzt + " unterstützt · " + count.automatisch + " automatisiert") : "Noch keine Schritte.";
+    var L = [];
+    L.push("# Ablauf: " + ((state.titel || "").trim() || "ohne Titel"));
+    L.push("");
+    L.push("## Vorher");
+    s.forEach(function (x, i) { L.push((i + 1) + ". " + x.text.trim()); });
+    L.push("");
+    L.push("## Nachher, selbst gestaltet");
+    s.forEach(function (x, i) {
+      var wie = (x.modus !== "selbst" && (x.wie || "").trim()) ? ": " + x.wie.trim() : "";
+      L.push((i + 1) + ". [" + label(x.modus) + "] " + x.text.trim() + wie);
+    });
+    if ((state.darstellung || []).length) { L.push(""); L.push("## Darstellung der Arbeitsanweisungen"); L.push(state.darstellung.join(", ")); }
+    if ((state.grenzen || "").trim()) { L.push(""); L.push("## Bewusst von Hand"); L.push(state.grenzen.trim()); }
+    L.push("");
+    L.push("_Erstellt mit der Ablauf-Werkbank von CoolWebToday am " + new Date().toLocaleDateString("de-AT") + ". Enthält keine Leistungs- oder Gesundheitsdaten._");
+    $("ausgabe").textContent = L.join("\n");
+  }
+
+  function save() { state.beispiel = false; $("beispiel-hinweis").hidden = true; CWT.store.set(KEY, state); }
+  function clone(o) { return JSON.parse(JSON.stringify(o)); }
+
+  $("darstellung").innerHTML = DARSTELLUNG.map(function (d, i) {
+    return '<input class="chip-input" type="checkbox" id="d-' + i + '" value="' + esc(d) + '"><label class="chip-label" for="d-' + i + '">' + esc(d) + '</label>';
+  }).join("");
+
+  state = CWT.store.get(KEY, null) || clone(BEISPIEL);
+  render();
+
+  $("schritte").addEventListener("input", function (e) {
+    var li = e.target.closest(".step"); if (!li) return;
+    var i = +li.getAttribute("data-i"); var k = e.target.getAttribute("data-k");
+    if (k) { state.schritte[i][k] = e.target.value; save(); output(); }
+  });
+  $("schritte").addEventListener("change", function (e) {
+    var li = e.target.closest(".step"); if (!li || e.target.type !== "radio") return;
+    var i = +li.getAttribute("data-i");
+    state.schritte[i].modus = e.target.value; save();
+    var wie = li.querySelector('[data-k="wie"]').closest(".field");
+    wie.hidden = e.target.value === "selbst";
+    output();
+  });
+  $("schritte").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-act]"); if (!b) return;
+    var i = +b.closest(".step").getAttribute("data-i"); var a = b.getAttribute("data-act"); var S = state.schritte;
+    if (a === "weg") S.splice(i, 1);
+    if (a === "hoch" && i > 0) S.splice(i - 1, 0, S.splice(i, 1)[0]);
+    if (a === "runter" && i < S.length - 1) S.splice(i + 1, 0, S.splice(i, 1)[0]);
+    save(); render();
+  });
+  $("schritt-neu").addEventListener("click", function () {
+    state.schritte.push({ text: "", modus: "selbst", wie: "" }); save(); render();
+    var last = document.getElementById("s-text-" + (state.schritte.length - 1)); if (last) last.focus();
+  });
+  $("titel").addEventListener("input", function () { state.titel = $("titel").value; save(); output(); });
+  $("grenzen").addEventListener("input", function () { state.grenzen = $("grenzen").value; save(); output(); });
+  $("darstellung").addEventListener("change", function () {
+    state.darstellung = Array.prototype.map.call(document.querySelectorAll("#darstellung input:checked"), function (c) { return c.value; });
+    save(); output();
+  });
+  $("form").addEventListener("submit", function (e) { e.preventDefault(); });
+  $("beispiel").addEventListener("click", function () { state = clone(BEISPIEL); CWT.store.remove(KEY); render(); });
+  $("leeren").addEventListener("click", function () { $("leeren-bestaetigen").hidden = false; $("leeren-ja").focus(); });
+  $("leeren-nein").addEventListener("click", function () { $("leeren-bestaetigen").hidden = true; });
+  $("leeren-ja").addEventListener("click", function () {
+    state = { titel: "", schritte: [{ text: "", modus: "selbst", wie: "" }], darstellung: [], grenzen: "", beispiel: false };
+    CWT.store.remove(KEY); render(); $("leeren-bestaetigen").hidden = true; $("feedback").textContent = "Ablauf geleert."; $("titel").focus();
+  });
+  $("kopieren").addEventListener("click", function () { CWT.copy($("ausgabe").textContent, $("feedback"), $("ausgabe")); });
+  $("speichern").addEventListener("click", function () {
+    CWT.download("ablauf-" + CWT.slug(state.titel) + ".md", $("ausgabe").textContent, "text/markdown", $("feedback"));
+  });
+})();
+</script>
+</body>
+</html>

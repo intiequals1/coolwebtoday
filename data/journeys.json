@@ -237,6 +237,59 @@
           ]
         }
       ]
+    },
+    {
+      "id": "arbeit-mitgestalten",
+      "titel": "Die eigene Arbeit mitgestalten",
+      "fuerWen": "Für Beschäftigte und Selbstständige, die ihre Arbeitsabläufe selbst digitalisieren wollen, auch mit eigenen Anforderungen an Tempo, Bedienung oder Darstellung.",
+      "danach": "Du hast deinen Ablauf beschrieben, pro Schritt selbst entschieden, was Technik übernimmt, und eine passende Darstellung ausprobiert.",
+      "dauer": "ca. 3 Stunden",
+      "format": "Einzeln oder in einer Kleingruppe, begleitet",
+      "status": "anfrage",
+      "preis": "79 € pro Person",
+      "hintergrund": {
+        "text": "Entstanden aus dem Vorhaben PROTEIN HUB 24 im Projektlabor digitalpath",
+        "url": "https://www.digitalpath.at/#protein-hub-24"
+      },
+      "stationen": [
+        {
+          "titel": "Den eigenen Ablauf aufschreiben",
+          "text": "Welche Schritte machst du, und wo wird es mühsam?",
+          "werkzeuge": [
+            "ablauf"
+          ]
+        },
+        {
+          "titel": "Hürden festhalten",
+          "text": "Wo bleibst du hängen, und was hilft dir weiter?",
+          "werkzeuge": [
+            "logbuch"
+          ]
+        },
+        {
+          "titel": "Die passende Darstellung finden",
+          "text": "Text, Symbole, Vorlesen oder Signale: Was macht Arbeitsanweisungen für dich klar?",
+          "werkzeuge": [
+            "ablauf"
+          ]
+        },
+        {
+          "titel": "Entscheiden, was Technik übernimmt",
+          "text": "Selbst machen, unterstützen lassen oder automatisieren. Du entscheidest pro Schritt, nicht die Maschine.",
+          "werkzeuge": [
+            "ablauf"
+          ]
+        },
+        {
+          "titel": "Einen Schritt ausprobieren",
+          "text": "Einen unterstützten Schritt mit einem einfachen Werkzeug testen und danach nachschärfen.",
+          "werkzeuge": [
+            "kurzbefehle",
+            "n8n",
+            "logbuch"
+          ]
+        }
+      ]
     }
   ],
   "preishinweis": "Endpreise. Als Kleinunternehmer wird keine Umsatzsteuer ausgewiesen.",
