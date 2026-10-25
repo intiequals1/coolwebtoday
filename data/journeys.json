@@ -10,23 +10,29 @@
       "danach": "Du hast einen Steckbrief deiner Idee und einen ersten Schritt, den du in einer Woche schaffen kannst.",
       "dauer": "ca. 2 Stunden",
       "format": "Einzeln oder in einer Kleingruppe, begleitet",
-      "status": "entwurf",
-      "preis": null,
+      "status": "anfrage",
+      "preis": "49 € pro Person",
       "stationen": [
         {
           "titel": "Die Idee in eigenen Worten aufschreiben",
           "text": "Welche Frage steht am Anfang? Für wen ist die Idee gedacht?",
-          "werkzeuge": ["steckbrief"]
+          "werkzeuge": [
+            "steckbrief"
+          ]
         },
         {
           "titel": "Annahmen sichtbar machen",
           "text": "Zeichne auf, wer beteiligt ist und was du über diese Menschen annimmst.",
-          "werkzeuge": ["excalidraw"]
+          "werkzeuge": [
+            "excalidraw"
+          ]
         },
         {
           "titel": "Den ersten kleinen Schritt wählen",
           "text": "Welcher Schritt zeigt am schnellsten, ob eine Annahme stimmt?",
-          "werkzeuge": ["steckbrief"]
+          "werkzeuge": [
+            "steckbrief"
+          ]
         },
         {
           "titel": "Rückschau",
@@ -42,23 +48,30 @@
       "danach": "Du kannst einen klaren Auftrag formulieren, ein lokales und ein Online-Werkzeug vergleichen und Ergebnisse selbst prüfen.",
       "dauer": "ca. 3 Stunden",
       "format": "Einzeln oder in einer Kleingruppe, begleitet",
-      "status": "entwurf",
-      "preis": null,
+      "status": "anfrage",
+      "preis": "79 € pro Person",
       "stationen": [
         {
           "titel": "Einen Auftrag formulieren",
           "text": "Was soll entstehen, für wen, und woran erkennst du ein gutes Ergebnis?",
-          "werkzeuge": ["ki-auftrag"]
+          "werkzeuge": [
+            "ki-auftrag"
+          ]
         },
         {
           "titel": "Lokal und online vergleichen",
           "text": "Derselbe Auftrag an ein Modell auf deinem Rechner und an einen Online-Dienst.",
-          "werkzeuge": ["lm-studio", "le-chat"]
+          "werkzeuge": [
+            "lm-studio",
+            "le-chat"
+          ]
         },
         {
           "titel": "Ergebnisse prüfen",
           "text": "Stimmen Fakten und Quellen? Was hättest du ohne KI anders gemacht?",
-          "werkzeuge": ["logbuch"]
+          "werkzeuge": [
+            "logbuch"
+          ]
         },
         {
           "titel": "KI-Nutzung offenlegen",
@@ -74,28 +87,39 @@
       "danach": "Ein kleiner Ablauf läuft automatisch, und du weißt, wo seine Grenzen liegen.",
       "dauer": "ca. 3 Stunden",
       "format": "Einzeln oder in einer Kleingruppe, begleitet",
-      "status": "entwurf",
-      "preis": null,
+      "status": "anfrage",
+      "preis": "79 € pro Person",
       "stationen": [
         {
           "titel": "Den Ablauf aufzeichnen",
           "text": "Welche Schritte machst du heute von Hand, und in welcher Reihenfolge?",
-          "werkzeuge": ["drawio"]
+          "werkzeuge": [
+            "drawio"
+          ]
         },
         {
           "titel": "Das passende Werkzeug wählen",
           "text": "Auf dem Telefon, auf dem eigenen Rechner oder als Online-Dienst?",
-          "werkzeuge": ["kurzbefehle", "n8n", "make"]
+          "werkzeuge": [
+            "kurzbefehle",
+            "n8n",
+            "make"
+          ]
         },
         {
           "titel": "Bauen und testen",
           "text": "Erst mit Beispieldaten, dann mit echten.",
-          "werkzeuge": ["kurzbefehle", "n8n"]
+          "werkzeuge": [
+            "kurzbefehle",
+            "n8n"
+          ]
         },
         {
           "titel": "Hürden festhalten",
           "text": "Wo bist du hängen geblieben, und was hat geholfen?",
-          "werkzeuge": ["logbuch"]
+          "werkzeuge": [
+            "logbuch"
+          ]
         }
       ]
     },
@@ -106,28 +130,36 @@
       "danach": "Du hast eine Frage an deine Daten beantwortet und das Ergebnis in einem Diagramm gezeigt.",
       "dauer": "ca. 2,5 Stunden",
       "format": "Einzeln oder in einer Kleingruppe, begleitet",
-      "status": "entwurf",
-      "preis": null,
+      "status": "anfrage",
+      "preis": "69 € pro Person",
       "stationen": [
         {
           "titel": "Die Frage schärfen",
           "text": "Was genau willst du wissen, und welche Spalten brauchst du dafür?",
-          "werkzeuge": ["steckbrief"]
+          "werkzeuge": [
+            "steckbrief"
+          ]
         },
         {
           "titel": "Die Tabelle aufräumen",
           "text": "Leere Zeilen, doppelte Einträge, uneinheitliche Schreibweisen.",
-          "werkzeuge": ["libreoffice"]
+          "werkzeuge": [
+            "libreoffice"
+          ]
         },
         {
           "titel": "Ein Diagramm gestalten",
           "text": "Welche Darstellung beantwortet deine Frage am direktesten?",
-          "werkzeuge": ["rawgraphs"]
+          "werkzeuge": [
+            "rawgraphs"
+          ]
         },
         {
           "titel": "Das Ergebnis gegenprüfen",
           "text": "Würde jemand anderes mit denselben Daten zum selben Schluss kommen?",
-          "werkzeuge": ["knime"]
+          "werkzeuge": [
+            "knime"
+          ]
         }
       ]
     },
@@ -138,23 +170,30 @@
       "danach": "Deine Notizen und Quellen liegen an einem Ort, und du kannst sie mit anderen teilen.",
       "dauer": "ca. 2 Stunden",
       "format": "Einzeln oder in einer Kleingruppe, begleitet",
-      "status": "entwurf",
-      "preis": null,
+      "status": "anfrage",
+      "preis": "49 € pro Person",
       "stationen": [
         {
           "titel": "Sammeln",
           "text": "Was gehört zur Idee, und wo liegt es heute?",
-          "werkzeuge": ["obsidian", "joplin"]
+          "werkzeuge": [
+            "obsidian",
+            "joplin"
+          ]
         },
         {
           "titel": "Quellen festhalten",
           "text": "Woher stammt eine Information, und wie zitierst du sie?",
-          "werkzeuge": ["zotero"]
+          "werkzeuge": [
+            "zotero"
+          ]
         },
         {
           "titel": "Gemeinsam weiterschreiben",
           "text": "Ein Dokument, an dem andere mitarbeiten können.",
-          "werkzeuge": ["cryptpad"]
+          "werkzeuge": [
+            "cryptpad"
+          ]
         }
       ]
     },
@@ -165,30 +204,41 @@
       "danach": "Du hast einen klickbaren Entwurf, den zwei Menschen ausprobiert haben, und weißt, was du ändern willst.",
       "dauer": "ca. 4 Stunden, auf zwei Termine verteilt",
       "format": "Einzeln oder in einer Kleingruppe, begleitet",
-      "status": "entwurf",
-      "preis": null,
+      "status": "anfrage",
+      "preis": "120 € pro Person",
       "stationen": [
         {
           "titel": "Skizzieren",
           "text": "Die wichtigsten Bildschirme auf Papier oder im Browser.",
-          "werkzeuge": ["excalidraw"]
+          "werkzeuge": [
+            "excalidraw"
+          ]
         },
         {
           "titel": "Klickbar machen",
           "text": "Aus der Skizze wird ein Entwurf, den man bedienen kann.",
-          "werkzeuge": ["penpot"]
+          "werkzeuge": [
+            "penpot"
+          ]
         },
         {
           "titel": "Mit Menschen testen",
           "text": "Zwei Personen probieren den Entwurf aus. Du notierst, wo sie zögern.",
-          "werkzeuge": ["logbuch"]
+          "werkzeuge": [
+            "logbuch"
+          ]
         },
         {
           "titel": "Barrieren prüfen",
           "text": "Kann man den Entwurf mit der Tastatur und mit einem Screenreader nutzen?",
-          "werkzeuge": ["wave", "nvda"]
+          "werkzeuge": [
+            "wave",
+            "nvda"
+          ]
         }
       ]
     }
-  ]
+  ],
+  "preishinweis": "Endpreise. Als Kleinunternehmer wird keine Umsatzsteuer ausgewiesen.",
+  "buchung": "Termine nach Vereinbarung. Du fragst per E-Mail an; mit der Bestätigung von Termin und Preis kommt der Vertrag zustande."
 }

@@ -12,8 +12,10 @@ werkzeuge/              Eigene Werkzeuge, laufen nur im Browser (localStorage)
   steckbrief.html       Ideen-Steckbrief → Markdown im Aufbau des digitalpath-Labors
   logbuch.html          Hürden-Logbuch → Markdown oder CSV
   ki-auftrag.html       KI-Auftrag-Baukasten → Text zum Kopieren
-impressum.html          ENTWURF – gelb markierte Angaben ergänzen
-datenschutz.html        ENTWURF – gelb markierte Angaben ergänzen, rechtlich prüfen lassen
+impressum.html          Impressum (§ 5 ECG, § 25 MedienG)
+datenschutz.html        Datenschutzerklärung
+agb.html                AGB für Journeys
+widerruf.html           Widerrufsbelehrung mit Muster-Widerrufsformular (FAGG)
 data/site.json          Kontakt-E-Mail und Stand der Seite
 data/werkzeuge.json     Werkzeugkatalog
 data/journeys.json      Journeys
@@ -50,8 +52,9 @@ Beim Prüfen eines bestehenden Eintrags `erfasst` aktualisieren und oben `stand`
 
 ### Journey ergänzen oder ändern (`data/journeys.json`)
 
-- `status`: `"entwurf"` zeigt „In Vorbereitung“; jeder andere Wert blendet das Schild aus.
+- `status`: `"entwurf"` zeigt „In Vorbereitung“, `"anfrage"` zeigt „Termin nach Vereinbarung“; jeder andere Wert blendet das Schild aus.
 - `preis`: `null` zeigt „Preis folgt“, sonst den Text, z. B. `"89 € pro Person"`.
+- `preishinweis`, `buchung`, `ermaessigung`: Hinweise oberhalb der Liste.
 - `stationen[].werkzeuge`: IDs aus `werkzeuge` oder `eigene` (`steckbrief`, `logbuch`, `ki-auftrag`).
 
 ### Kontakt eintragen (`data/site.json`)
@@ -83,9 +86,8 @@ Hinweis: coolwebtoday.org leitet derzeit von https auf http um. Nach der Umstell
 
 ## Vor dem Livegang
 
-- [ ] Impressum: Anschrift, E-Mail, Gewerbewortlaut, Behörde, Kammer, UID bzw. Kleinunternehmerhinweis
-- [ ] Datenschutz: Platzhalter füllen, Übermittlungsgrundlage USA prüfen, rechtlich prüfen lassen
-- [ ] `data/site.json`: Kontakt-E-Mail
-- [ ] Journeys: Inhalte, Dauer, Preise festlegen (die vorhandenen Einträge sind Entwürfe)
-- [ ] Vor dem Verkauf an Verbraucher: AGB, Widerrufsbelehrung, Preisangaben
+- [ ] Impressum: Gewerbebehörde laut GISA eintragen (einziger offener Platzhalter)
+- [ ] Impressum, Datenschutz, AGB und Widerrufsbelehrung rechtlich prüfen lassen
+- [ ] Journey-Preise bestätigen (abgeleitet aus der Preisspanne im Antrag, 49 bis 120 € pro Person)
+- [ ] Journey-Inhalte und Dauer prüfen und bei Bedarf in `data/journeys.json` anpassen
 - [ ] Werkzeugkatalog: Einträge einmal selbst gegenprüfen
