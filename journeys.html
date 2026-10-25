@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="de" data-root="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Journeys · CoolWebToday</title>
+<meta name="description" content="Kuratierte Wege von der eigenen Idee zur Umsetzung, mit Stationen, passenden Werkzeugen und Begleitung.">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 30 30" aria-hidden="true" focusable="false"><rect class="bm-board" x="1" y="1" width="28" height="28" rx="5"/><g class="bm-holes"><circle cx="8" cy="8" r="2"/><circle cx="15" cy="8" r="2"/><circle cx="22" cy="8" r="2"/><circle cx="8" cy="15" r="2"/><circle cx="22" cy="15" r="2"/><circle cx="8" cy="22" r="2"/><circle cx="15" cy="22" r="2"/><circle cx="22" cy="22" r="2"/></g><circle class="bm-peg" cx="15" cy="15" r="3.4"/></svg>
+      CoolWebToday
+    </a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav">
+        <li><a href="werkstatt.html">Toolwerkstatt</a></li>
+        <li><a href="journeys.html" aria-current="page">Journeys</a></li>
+        <li><a href="index.html#vorhaben">Das Vorhaben</a></li>
+        <li><a class="ext" href="https://www.digitalpath.at/#labor" rel="noopener" target="_blank">digitalpath</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <p class="eyebrow">Journeys</p>
+        <h1>Kuratierte Wege von deiner Idee zur Umsetzung</h1>
+        <p class="lead">Eine Journey besteht aus Stationen. Jede Station nennt ein Ziel, passende Werkzeuge aus der Werkstatt und einen Moment zum Nachdenken. Claudiu Dangulea erstellt und kuratiert die Journeys und begleitet dich dabei.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="liste-titel">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="liste-titel">Journeys in Vorbereitung</h2>
+        <div class="notice">
+          <p id="grundsatz">Jede Station ist ein Angebot. Du kannst Stationen überspringen, die Reihenfolge ändern, zu freiem Ausprobieren wechseln oder aufhören. Es gibt keine Prüfung und keine Bewertung.</p>
+        </div>
+        <p class="muted">Termine und Preise folgen. Du kannst schon jetzt Interesse melden. <span id="ermaessigung"></span></p>
+      </div>
+      <div class="journeys" id="journeys">
+        <p class="muted">Journeys werden geladen …</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="eigene-idee-titel">
+    <div class="wrap">
+      <div class="prose">
+        <h2 id="eigene-idee-titel">Noch keine passende Journey?</h2>
+        <p>Halte deine Idee im <a href="werkzeuge/steckbrief.html">Ideen-Steckbrief</a> fest und schick ihn mit deiner Anfrage. Daraus kann eine Journey für dich entstehen.</p>
+        <p data-kontakt>Die Kontaktadresse wird in Kürze ergänzt.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <p><strong>CoolWebToday</strong> ist ein Vorhaben von Claudiu Dangulea, Wien.</p>
+      <small>Diese Seite entstand mit KI-Unterstützung. Sie setzt keine Cookies, kein Tracking und lädt keine externen Dienste.</small>
+    </div>
+    <div>
+      <ul class="foot-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+        <li><a href="https://www.digitalpath.at" rel="noopener" target="_blank">digitalpath.at</a></li>
+      </ul>
+      <small>Stand: <span data-stand>25. Oktober 2026</span></small>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  "use strict";
+  var esc = CWT.esc;
+
+  function toolLink(id, names, own) {
+    if (own[id]) return '<a class="fact" href="' + esc(own[id].url) + '">' + esc(own[id].name) + '</a>';
+    if (names[id]) return '<a class="fact" href="werkstatt.html#tool-' + esc(id) + '">' + esc(names[id]) + '</a>';
+    return '';
+  }
+
+  function interest(j, site) {
+    var email = site && site.kontakt && site.kontakt.email;
+    if (email) {
+      var subject = encodeURIComponent("Interesse an der Journey „" + j.titel + "“");
+      return '<a class="btn small" href="mailto:' + esc(email) + '?subject=' + subject + '">Interesse melden</a>';
+    }
+    var hint = (site && site.kontakt && site.kontakt.hinweis) || "Kontaktadresse folgt.";
+    return '<span class="muted">Interesse melden: ' + esc(hint) + '</span>';
+  }
+
+  Promise.all([
+    CWT.loadJSON("data/journeys.json"),
+    CWT.loadJSON("data/werkzeuge.json"),
+    CWT.site
+  ]).then(function (r) {
+    var jd = r[0], wd = r[1], site = r[2];
+    var names = {}; wd.werkzeuge.forEach(function (w) { names[w.id] = w.name; });
+    var own = {}; (wd.eigene || []).forEach(function (w) { own[w.id] = w; });
+    if (jd.grundsatz) document.getElementById("grundsatz").textContent = jd.grundsatz;
+    if (jd.ermaessigung) document.getElementById("ermaessigung").textContent = jd.ermaessigung;
+
+    document.getElementById("journeys").innerHTML = jd.journeys.map(function (j) {
+      var stations = (j.stationen || []).map(function (s, i) {
+        var uses = (s.werkzeuge || []).map(function (id) { return toolLink(id, names, own); }).join("");
+        return '<li class="station"><span class="station-dot" aria-hidden="true">' + (i + 1) + '</span>' +
+          '<b>' + esc(s.titel) + '</b>' +
+          '<p>' + esc(s.text) + '</p>' +
+          (uses ? '<div class="uses"><span class="sr-only">Werkzeuge:</span>' + uses + '</div>' : '<div></div>') +
+          '</li>';
+      }).join("");
+      var price = j.preis ? esc(j.preis) : "Preis folgt";
+      var badge = j.status === "entwurf" ? '<span class="badge">In Vorbereitung</span>' : '';
+      return '<article class="journey" id="journey-' + esc(j.id) + '">' +
+        '<div class="journey-head"><h3>' + esc(j.titel) + '</h3>' + badge + '</div>' +
+        '<dl class="journey-meta">' +
+          '<div><dt>Für wen</dt><dd>' + esc(j.fuerWen) + '</dd></div>' +
+          '<div><dt>Danach</dt><dd>' + esc(j.danach) + '</dd></div>' +
+          '<div><dt>Dauer und Format</dt><dd>' + esc(j.dauer) + '<br>' + esc(j.format) + '</dd></div>' +
+        '</dl>' +
+        '<details><summary>' + (j.stationen || []).length + ' Stationen ansehen</summary>' +
+          '<ol class="stations">' + stations + '</ol></details>' +
+        '<div class="journey-foot"><span class="price">' + price + '</span>' + interest(j, site) + '</div>' +
+        '</article>';
+    }).join("");
+    var h = (location.hash || "").replace("#", "");
+    if (h.indexOf("journey-") === 0) {
+      var t = document.getElementById(h);
+      if (t) { t.classList.add("focus"); var det = t.querySelector("details"); if (det) det.open = true; t.scrollIntoView({ block: "start" }); }
+    }
+  }).catch(function () {
+    document.getElementById("journeys").innerHTML = '<p>Die Journeys konnten nicht geladen werden. Bitte die Seite neu laden.</p>';
+  });
+})();
+</script>
+</body>
+</html>

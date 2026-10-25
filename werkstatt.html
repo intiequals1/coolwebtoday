@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="de" data-root="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Toolwerkstatt · CoolWebToday</title>
+<meta name="description" content="Werkzeuge, mit denen sich Ideen umsetzen lassen: ein geprüfter Katalog und eigene Werkzeuge, die nur in deinem Browser laufen.">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 30 30" aria-hidden="true" focusable="false"><rect class="bm-board" x="1" y="1" width="28" height="28" rx="5"/><g class="bm-holes"><circle cx="8" cy="8" r="2"/><circle cx="15" cy="8" r="2"/><circle cx="22" cy="8" r="2"/><circle cx="8" cy="15" r="2"/><circle cx="22" cy="15" r="2"/><circle cx="8" cy="22" r="2"/><circle cx="15" cy="22" r="2"/><circle cx="22" cy="22" r="2"/></g><circle class="bm-peg" cx="15" cy="15" r="3.4"/></svg>
+      CoolWebToday
+    </a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav">
+        <li><a href="werkstatt.html" aria-current="page">Toolwerkstatt</a></li>
+        <li><a href="journeys.html">Journeys</a></li>
+        <li><a href="index.html#vorhaben">Das Vorhaben</a></li>
+        <li><a class="ext" href="https://www.digitalpath.at/#labor" rel="noopener" target="_blank">digitalpath</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <p class="eyebrow">Toolwerkstatt</p>
+        <h1>Werkzeuge, um Ideen umzusetzen</h1>
+        <p class="lead">Die Werkstatt sammelt Werkzeuge, mit denen sich digitalpath-Vorhaben und deine eigenen Ideen umsetzen lassen. Der Katalog wird regelmäßig geprüft und ergänzt.</p>
+        <p><span class="status">Katalog-Stand <span id="katalog-stand">Oktober 2026</span></span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="eigene-titel">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="eigene-titel">Werkzeuge der Werkstatt</h2>
+        <p class="muted">Selbst gebaut für die Arbeit an Ideen. Sie laufen nur in deinem Browser. Nichts wird gesendet, und du brauchst kein Konto.</p>
+      </div>
+      <div class="own">
+        <article class="own-card">
+          <p class="local">Läuft lokal im Browser</p>
+          <h3>Ideen-Steckbrief</h3>
+          <p>Halte eine Idee in vier Feldern fest: Ausgangsfrage, Annahmen, erster Schritt und was offen bleibt. Ergebnis als Markdown.</p>
+          <a class="btn small" href="werkzeuge/steckbrief.html">Steckbrief öffnen</a>
+        </article>
+        <article class="own-card">
+          <p class="local">Läuft lokal im Browser</p>
+          <h3>Hürden-Logbuch</h3>
+          <p>Notiere, wo du beim Ausprobieren hängen bleibst und was geholfen hat. Hängenbleiben sagt etwas über das Werkzeug, nicht über dich.</p>
+          <a class="btn small" href="werkzeuge/logbuch.html">Logbuch öffnen</a>
+        </article>
+        <article class="own-card">
+          <p class="local">Läuft lokal im Browser</p>
+          <h3>KI-Auftrag-Baukasten</h3>
+          <p>Formuliere einen klaren Auftrag an einen KI-Assistenten und lege vorher fest, woran du das Ergebnis prüfst.</p>
+          <a class="btn small" href="werkzeuge/ki-auftrag.html">Baukasten öffnen</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="werkzeugwand" aria-labelledby="wand-titel">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="wand-titel">Werkzeugwand</h2>
+        <p class="muted">Externe Werkzeuge, ausgewählt danach, ob sie beim Umsetzen einer Idee helfen. Filtere nach dem Schritt, an dem du gerade stehst.</p>
+      </div>
+
+      <form class="filters" id="filter" role="search" aria-label="Werkzeuge filtern">
+        <div class="filter-grid">
+          <div class="search">
+            <label class="label eyebrow" for="q">Suchen</label>
+            <input id="q" type="search" placeholder="z. B. Diagramm, Notizen, lokal" autocomplete="off">
+          </div>
+          <div class="search">
+            <label class="label eyebrow" for="betrieb">Wo läuft es?</label>
+            <select id="betrieb">
+              <option value="">Überall</option>
+              <option value="lokal">Auf dem eigenen Gerät</option>
+              <option value="browser">Im Browser</option>
+              <option value="cloud">Online-Dienst</option>
+              <option value="selbst-hosten">Selbst betreiben</option>
+            </select>
+          </div>
+          <div class="search">
+            <label class="label eyebrow" for="einstieg">Einstieg</label>
+            <select id="einstieg">
+              <option value="">Alle</option>
+              <option value="leicht">Leicht</option>
+              <option value="mittel">Mittel</option>
+              <option value="fortgeschritten">Für Fortgeschrittene</option>
+            </select>
+          </div>
+        </div>
+        <fieldset>
+          <legend>Schritt in deinem Vorhaben</legend>
+          <div class="chips" id="schritte-chips"></div>
+        </fieldset>
+        <fieldset>
+          <legend>Bereich</legend>
+          <div class="chips" id="kategorie-chips"></div>
+        </fieldset>
+        <div class="chips">
+          <label class="toggle"><input type="checkbox" id="ohne-konto"> Nur ohne Konto nutzbar</label>
+          <label class="toggle"><input type="checkbox" id="nur-oss"> Nur Open Source</label>
+        </div>
+      </form>
+
+      <div class="result-bar">
+        <p class="result-count" id="anzahl" aria-live="polite">Werkzeuge werden geladen …</p>
+        <button class="btn quiet small" type="button" id="zuruecksetzen">Filter zurücksetzen</button>
+      </div>
+
+      <div class="wall">
+        <ul class="catalog" id="katalog"></ul>
+        <div class="empty" id="leer" hidden>
+          <p><strong>Kein Werkzeug passt zu diesen Filtern.</strong></p>
+          <p class="muted">Lockere einen Filter oder setze alle zurück.</p>
+        </div>
+      </div>
+
+      <div class="prose" style="margin-top:1.5rem">
+        <p class="muted" id="katalog-hinweis">Angaben ohne Gewähr. Funktionen, Tarife und Bedingungen ändern sich; bitte vor der Nutzung beim Anbieter prüfen.</p>
+        <h3>Ein Werkzeug fehlt?</h3>
+        <p>Schlag es vor, mit einem Satz dazu, bei welchem Schritt es dir geholfen hat.</p>
+        <p data-kontakt>Die Kontaktadresse wird in Kürze ergänzt.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <p><strong>CoolWebToday</strong> ist ein Vorhaben von Claudiu Dangulea, Wien.</p>
+      <small>Diese Seite entstand mit KI-Unterstützung. Sie setzt keine Cookies, kein Tracking und lädt keine externen Dienste.</small>
+    </div>
+    <div>
+      <ul class="foot-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+        <li><a href="https://www.digitalpath.at" rel="noopener" target="_blank">digitalpath.at</a></li>
+      </ul>
+      <small>Stand: <span data-stand>25. Oktober 2026</span></small>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  "use strict";
+  var LABEL = {
+    betrieb: { "lokal": "Auf dem eigenen Gerät", "browser": "Im Browser", "cloud": "Online-Dienst", "selbst-hosten": "Selbst betreiben" },
+    lizenz: { "open-source": "Open Source", "quelloffen": "Quelloffen, eingeschränkte Lizenz", "proprietaer": "Proprietär" },
+    konto: { "nein": "Ohne Konto", "optional": "Konto optional", "ja": "Konto nötig" },
+    einstieg: { "leicht": "Einstieg leicht", "mittel": "Einstieg mittel", "fortgeschritten": "Für Fortgeschrittene" }
+  };
+  var data = null;
+  var el = function (id) { return document.getElementById(id); };
+  var esc = CWT.esc;
+
+  function chipGroup(container, name, items) {
+    var html = '<input class="chip-input" type="radio" name="' + name + '" id="' + name + '-alle" value="" checked>' +
+      '<label class="chip-label" for="' + name + '-alle">Alle</label>';
+    items.forEach(function (it) {
+      html += '<input class="chip-input" type="radio" name="' + name + '" id="' + name + '-' + esc(it.id) + '" value="' + esc(it.id) + '">' +
+        '<label class="chip-label" for="' + name + '-' + esc(it.id) + '">' + esc(it.label) + '</label>';
+    });
+    container.innerHTML = html;
+  }
+
+  function radioValue(name) {
+    var c = document.querySelector('input[name="' + name + '"]:checked');
+    return c ? c.value : "";
+  }
+
+  function card(w, katLabel, schrittLabel) {
+    var good = { "lokal": 1, "open-source": 1, "nein": 1 };
+    var facts = [
+      ["betrieb", w.betrieb], ["lizenz", w.lizenz], ["konto", w.konto], ["einstieg", w.einstieg]
+    ].map(function (f) {
+      var txt = LABEL[f[0]][f[1]] || f[1];
+      return '<li class="fact' + (good[f[1]] ? " good" : "") + '">' + esc(txt) + '</li>';
+    }).join("");
+    var steps = (w.schritte || []).map(function (s) { return schrittLabel[s] || s; }).join(", ");
+    return '<li class="tool" id="tool-' + esc(w.id) + '">' +
+      '<div class="tool-head"><h3>' + esc(w.name) + '</h3><span class="tool-cat">' + esc(katLabel[w.kategorie] || "") + '</span></div>' +
+      '<p>' + esc(w.wofuer) + '</p>' +
+      '<ul class="facts" aria-label="Eigenschaften">' + facts + '</ul>' +
+      (w.hinweis ? '<p class="tool-note">' + esc(w.hinweis) + '</p>' : '') +
+      '<div class="tool-foot"><span>Hilft bei: ' + esc(steps) + '</span>' +
+      '<a href="' + esc(w.url) + '" rel="noopener" target="_blank">Zur Website ↗<span class="sr-only"> von ' + esc(w.name) + ' (neuer Tab)</span></a></div>' +
+      (w.erfasst ? '<p class="tool-date mono">Erfasst ' + esc(erfasst(w.erfasst)) + '</p>' : '') +
+      '</li>';
+  }
+
+  function erfasst(v) {
+    var m = /^(\d{4})-(\d{2})$/.exec(v || "");
+    return m ? m[2] + "/" + m[1] : v;
+  }
+
+  function render() {
+    if (!data) return;
+    var q = el("q").value.trim().toLowerCase();
+    var kat = radioValue("kategorie");
+    var schritt = radioValue("schritt");
+    var betrieb = el("betrieb").value;
+    var einstieg = el("einstieg").value;
+    var ohneKonto = el("ohne-konto").checked;
+    var nurOss = el("nur-oss").checked;
+
+    var katLabel = {}; data.kategorien.forEach(function (k) { katLabel[k.id] = k.label; });
+    var schrittLabel = {}; data.schritte.forEach(function (s) { schrittLabel[s.id] = s.label; });
+
+    var list = data.werkzeuge.filter(function (w) {
+      if (kat && w.kategorie !== kat) return false;
+      if (schritt && (w.schritte || []).indexOf(schritt) === -1) return false;
+      if (betrieb && w.betrieb !== betrieb) return false;
+      if (einstieg && w.einstieg !== einstieg) return false;
+      if (ohneKonto && w.konto === "ja") return false;
+      if (nurOss && w.lizenz !== "open-source") return false;
+      if (q) {
+        var hay = [w.name, w.wofuer, w.hinweis, katLabel[w.kategorie], LABEL.betrieb[w.betrieb], LABEL.lizenz[w.lizenz]].join(" ").toLowerCase();
+        if (hay.indexOf(q) === -1) return false;
+      }
+      return true;
+    });
+
+    el("katalog").innerHTML = list.map(function (w) { return card(w, katLabel, schrittLabel); }).join("");
+    el("leer").hidden = list.length !== 0;
+    el("anzahl").textContent = list.length === data.werkzeuge.length
+      ? data.werkzeuge.length + " Werkzeuge"
+      : list.length + " von " + data.werkzeuge.length + " Werkzeugen";
+  }
+
+  function focusHash() {
+    var h = (location.hash || "").replace("#", "");
+    if (h.indexOf("tool-") !== 0) return;
+    if (!document.getElementById(h)) { el("filter").reset(); render(); }
+    var t = document.getElementById(h);
+    if (t) { t.classList.add("focus"); t.scrollIntoView({ block: "center" }); }
+  }
+
+  function reset() {
+    el("filter").reset();
+    render();
+  }
+
+  CWT.loadJSON("data/werkzeuge.json").then(function (d) {
+    data = d;
+    chipGroup(el("schritte-chips"), "schritt", d.schritte);
+    chipGroup(el("kategorie-chips"), "kategorie", d.kategorien);
+    if (d.stand) el("katalog-stand").textContent = CWT.formatDate(d.stand);
+    if (d.hinweis) el("katalog-hinweis").textContent = d.hinweis;
+    render();
+    focusHash();
+    window.addEventListener("hashchange", focusHash);
+  }).catch(function (e) {
+    el("anzahl").textContent = "Der Katalog konnte nicht geladen werden. Bitte die Seite neu laden.";
+  });
+
+  el("filter").addEventListener("input", render);
+  el("filter").addEventListener("change", render);
+  el("filter").addEventListener("submit", function (e) { e.preventDefault(); });
+  el("zuruecksetzen").addEventListener("click", reset);
+})();
+</script>
+</body>
+</html>

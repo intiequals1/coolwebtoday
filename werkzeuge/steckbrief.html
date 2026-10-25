@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="de" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ideen-Steckbrief · CoolWebToday</title>
+<meta name="description" content="Halte eine Idee in vier Feldern fest: Ausgangsfrage, Annahmen, erster Schritt und was offen bleibt. Läuft nur in deinem Browser.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <svg class="brand-mark" viewBox="0 0 30 30" aria-hidden="true" focusable="false"><rect class="bm-board" x="1" y="1" width="28" height="28" rx="5"/><g class="bm-holes"><circle cx="8" cy="8" r="2"/><circle cx="15" cy="8" r="2"/><circle cx="22" cy="8" r="2"/><circle cx="8" cy="15" r="2"/><circle cx="22" cy="15" r="2"/><circle cx="8" cy="22" r="2"/><circle cx="15" cy="22" r="2"/><circle cx="22" cy="22" r="2"/></g><circle class="bm-peg" cx="15" cy="15" r="3.4"/></svg>
+      CoolWebToday
+    </a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav">
+        <li><a href="../werkstatt.html" aria-current="page">Toolwerkstatt</a></li>
+        <li><a href="../journeys.html">Journeys</a></li>
+        <li><a href="../index.html#vorhaben">Das Vorhaben</a></li>
+        <li><a class="ext" href="https://www.digitalpath.at/#labor" rel="noopener" target="_blank">digitalpath</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <p class="eyebrow"><a href="../werkstatt.html">Toolwerkstatt</a> · Werkzeug der Werkstatt</p>
+        <h1>Ideen-Steckbrief</h1>
+        <p class="lead">Schreib deine Idee so auf, dass andere sie verstehen und du den ersten Schritt kennst. Der Aufbau folgt dem Projektlabor digitalpath: Ausgangsfrage, Annahmen, was gebaut oder geprüft wird, was offen bleibt.</p>
+        <div class="notice local"><p><strong>Bleibt auf deinem Gerät.</strong> Dein Entwurf wird nur in diesem Browser gespeichert. Nichts wird gesendet.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap tool-page">
+      <form class="panel" id="form" aria-labelledby="form-titel">
+        <h2 id="form-titel">Deine Idee</h2>
+        <p class="draft-banner" id="beispiel-hinweis" hidden><strong>Beispiel.</strong> So kann ein Steckbrief aussehen. Überschreib die Felder oder starte leer.</p>
+        <div class="field">
+          <label for="titel">Arbeitstitel</label>
+          <input id="titel" type="text" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="frage">Ausgangsfrage</label>
+          <span class="help" id="frage-help">Welche Frage oder welches Problem steht am Anfang?</span>
+          <textarea id="frage" aria-describedby="frage-help"></textarea>
+        </div>
+        <div class="field">
+          <label for="wer">Für wen?</label>
+          <textarea id="wer" rows="2"></textarea>
+        </div>
+        <div class="field">
+          <label for="annahmen">Annahmen</label>
+          <span class="help" id="annahmen-help">Was nimmst du an, ohne es schon zu wissen? Eine Annahme pro Zeile.</span>
+          <textarea id="annahmen" aria-describedby="annahmen-help"></textarea>
+        </div>
+        <div class="field">
+          <label for="schritt">Erster Schritt: was gebaut oder geprüft wird</label>
+          <span class="help" id="schritt-help">Ein Schritt, der in etwa einer Woche zeigt, ob eine Annahme stimmt.</span>
+          <textarea id="schritt" aria-describedby="schritt-help"></textarea>
+        </div>
+        <div class="field">
+          <label for="offen">Was offen bleibt</label>
+          <textarea id="offen"></textarea>
+        </div>
+        <fieldset class="field" style="border:0;padding:0;margin:0">
+          <legend class="label">Werkzeuge, die passen könnten</legend>
+          <div class="check-grid chips" id="werkzeug-wahl"><span class="muted">Werkzeuge werden geladen …</span></div>
+        </fieldset>
+        <div class="field">
+          <label class="toggle"><input type="checkbox" id="ki"> KI hat bei diesem Steckbrief mitgearbeitet</label>
+          <input id="ki-wobei" type="text" placeholder="Wobei? z. B. Annahmen gesammelt" aria-label="Wobei hat KI mitgearbeitet?" autocomplete="off">
+        </div>
+        <div class="btn-row">
+          <button class="btn quiet small" type="button" id="leeren">Leeren</button>
+          <button class="btn quiet small" type="button" id="beispiel">Beispiel laden</button>
+        </div>
+        <div class="confirm" id="leeren-bestaetigen" hidden>
+          <span>Alle Felder leeren und den gespeicherten Entwurf löschen?</span>
+          <button class="btn small" type="button" id="leeren-ja">Ja, leeren</button>
+          <button class="btn quiet small" type="button" id="leeren-nein">Abbrechen</button>
+        </div>
+      </form>
+
+      <div class="panel" aria-labelledby="out-titel">
+        <h2 id="out-titel">Dein Steckbrief</h2>
+        <pre class="output" id="ausgabe" tabindex="0" aria-label="Steckbrief als Markdown"></pre>
+        <div class="btn-row">
+          <button class="btn small" type="button" id="kopieren">Kopieren</button>
+          <button class="btn ghost small" type="button" id="speichern">Als Markdown-Datei speichern</button>
+        </div>
+        <p class="feedback" id="feedback" aria-live="polite"></p>
+        <div class="suggest" id="vorschlaege" hidden>
+          <h3>Journeys, die dazu passen</h3>
+          <ul id="vorschlag-liste"></ul>
+        </div>
+        <p class="muted">Mit dem Steckbrief kannst du eine <a href="../journeys.html">Journey anfragen</a>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <p><strong>CoolWebToday</strong> ist ein Vorhaben von Claudiu Dangulea, Wien.</p>
+      <small>Diese Seite entstand mit KI-Unterstützung. Sie setzt keine Cookies, kein Tracking und lädt keine externen Dienste.</small>
+    </div>
+    <div>
+      <ul class="foot-links">
+        <li><a href="../impressum.html">Impressum</a></li>
+        <li><a href="../datenschutz.html">Datenschutz</a></li>
+        <li><a href="https://www.digitalpath.at" rel="noopener" target="_blank">digitalpath.at</a></li>
+      </ul>
+      <small>Stand: <span data-stand>25. Oktober 2026</span></small>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/site.js"></script>
+<script>
+(function () {
+  "use strict";
+  var KEY = "cwt.steckbrief.v1";
+  var $ = function (id) { return document.getElementById(id); };
+  var FIELDS = ["titel", "frage", "wer", "annahmen", "schritt", "offen", "ki-wobei"];
+  var BEISPIEL = {
+    titel: "Ausfall-Info für den Sportverein",
+    frage: "Wie erfahren alle Mitglieder rechtzeitig, wenn ein Training ausfällt?",
+    wer: "Trainerinnen und Trainer eines kleinen Vereins mit rund 40 Mitgliedern",
+    annahmen: "Viele Mitglieder lesen E-Mails nur unregelmäßig.\nEine Nachricht auf dem Telefon wird eher gelesen.\nDie Trainerinnen und Trainer haben wenig Zeit für Technik.",
+    schritt: "Eine Woche lang notieren, wie Ausfälle heute bekanntgegeben werden und wer davon zu spät erfährt.",
+    offen: "Welcher Weg erreicht auch Mitglieder ohne Smartphone?",
+    "ki-wobei": "",
+    ki: false,
+    werkzeuge: ["kurzbefehle", "n8n"],
+    beispiel: true
+  };
+  var tools = [], journeys = [];
+
+  function read() {
+    var d = {};
+    FIELDS.forEach(function (f) { d[f] = $(f).value; });
+    d.ki = $("ki").checked;
+    d.werkzeuge = Array.prototype.map.call(document.querySelectorAll('#werkzeug-wahl input:checked'), function (i) { return i.value; });
+    return d;
+  }
+
+  function write(d) {
+    FIELDS.forEach(function (f) { $(f).value = d[f] || ""; });
+    $("ki").checked = !!d.ki;
+    document.querySelectorAll('#werkzeug-wahl input').forEach(function (i) {
+      i.checked = (d.werkzeuge || []).indexOf(i.value) !== -1;
+    });
+    $("beispiel-hinweis").hidden = !d.beispiel;
+  }
+
+  function markdown(d) {
+    var lines = [];
+    var heute = new Date().toLocaleDateString("de-AT");
+    lines.push("# " + (d.titel.trim() || "Idee ohne Titel"));
+    lines.push("");
+    lines.push("**Ausgangsfrage:** " + (d.frage.trim() || "–"));
+    lines.push("");
+    lines.push("**Für wen:** " + (d.wer.trim() || "–"));
+    lines.push("");
+    lines.push("## Annahmen");
+    var a = d.annahmen.split("\n").map(function (s) { return s.trim(); }).filter(Boolean);
+    lines.push(a.length ? a.map(function (s) { return "- " + s; }).join("\n") : "- –");
+    lines.push("");
+    lines.push("## Erster Schritt: was gebaut oder geprüft wird");
+    lines.push(d.schritt.trim() || "–");
+    lines.push("");
+    lines.push("## Was offen bleibt");
+    lines.push(d.offen.trim() || "–");
+    var w = tools.filter(function (t) { return d.werkzeuge.indexOf(t.id) !== -1; });
+    if (w.length) {
+      lines.push("");
+      lines.push("## Werkzeuge, die passen könnten");
+      w.forEach(function (t) { lines.push("- " + t.name + " (" + t.url + ")"); });
+    }
+    lines.push("");
+    lines.push("## KI-Unterstützung");
+    lines.push(d.ki ? ("Ja" + (d["ki-wobei"].trim() ? ": " + d["ki-wobei"].trim() : "")) : "Nein");
+    lines.push("");
+    lines.push("_Erstellt mit dem Ideen-Steckbrief von CoolWebToday am " + heute + "._");
+    return lines.join("\n");
+  }
+
+  function suggest(d) {
+    var hits = journeys.map(function (j) {
+      var ids = [];
+      (j.stationen || []).forEach(function (s) { ids = ids.concat(s.werkzeuge || []); });
+      var n = d.werkzeuge.filter(function (id) { return ids.indexOf(id) !== -1; }).length;
+      return { j: j, n: n };
+    }).filter(function (x) { return x.n > 0; }).sort(function (a, b) { return b.n - a.n; }).slice(0, 3);
+    $("vorschlaege").hidden = hits.length === 0;
+    $("vorschlag-liste").innerHTML = hits.map(function (x) {
+      return '<li><a href="../journeys.html#journey-' + CWT.esc(x.j.id) + '">' + CWT.esc(x.j.titel) + '</a></li>';
+    }).join("");
+  }
+
+  function update(save) {
+    var d = read();
+    $("ausgabe").textContent = markdown(d);
+    suggest(d);
+    if (save) { d.beispiel = false; $("beispiel-hinweis").hidden = true; CWT.store.set(KEY, d); }
+  }
+
+  function buildToolChoice() {
+    $("werkzeug-wahl").innerHTML = tools.map(function (t) {
+      var id = "w-" + t.id;
+      return '<input class="chip-input" type="checkbox" id="' + CWT.esc(id) + '" value="' + CWT.esc(t.id) + '">' +
+        '<label class="chip-label" for="' + CWT.esc(id) + '">' + CWT.esc(t.name) + '</label>';
+    }).join("");
+  }
+
+  Promise.all([CWT.loadJSON("data/werkzeuge.json"), CWT.loadJSON("data/journeys.json")]).then(function (r) {
+    tools = r[0].werkzeuge || [];
+    journeys = r[1].journeys || [];
+    buildToolChoice();
+  }).catch(function () {
+    $("werkzeug-wahl").innerHTML = '<span class="muted">Die Werkzeugliste konnte nicht geladen werden.</span>';
+  }).then(function () {
+    var saved = CWT.store.get(KEY, null);
+    write(saved || BEISPIEL);
+    update(false);
+  });
+
+  $("form").addEventListener("input", function () { update(true); });
+  $("form").addEventListener("change", function () { update(true); });
+  $("form").addEventListener("submit", function (e) { e.preventDefault(); });
+  $("beispiel").addEventListener("click", function () { write(BEISPIEL); update(false); CWT.store.remove(KEY); });
+  $("leeren").addEventListener("click", function () { $("leeren-bestaetigen").hidden = false; $("leeren-ja").focus(); });
+  $("leeren-nein").addEventListener("click", function () { $("leeren-bestaetigen").hidden = true; $("leeren").focus(); });
+  $("leeren-ja").addEventListener("click", function () {
+    write({ werkzeuge: [] }); CWT.store.remove(KEY); update(false);
+    $("leeren-bestaetigen").hidden = true; $("feedback").textContent = "Formular geleert, Entwurf gelöscht."; $("titel").focus();
+  });
+  $("kopieren").addEventListener("click", function () { CWT.copy($("ausgabe").textContent, $("feedback"), $("ausgabe")); });
+  $("speichern").addEventListener("click", function () {
+    var name = "steckbrief-" + CWT.slug($("titel").value) + ".md";
+    CWT.download(name, $("ausgabe").textContent, "text/markdown", $("feedback"));
+  });
+})();
+</script>
+</body>
+</html>

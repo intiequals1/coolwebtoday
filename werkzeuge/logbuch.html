@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="de" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hürden-Logbuch · CoolWebToday</title>
+<meta name="description" content="Notiere, wo du beim Ausprobieren eines Werkzeugs hängen bleibst und was geholfen hat. Läuft nur in deinem Browser.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <svg class="brand-mark" viewBox="0 0 30 30" aria-hidden="true" focusable="false"><rect class="bm-board" x="1" y="1" width="28" height="28" rx="5"/><g class="bm-holes"><circle cx="8" cy="8" r="2"/><circle cx="15" cy="8" r="2"/><circle cx="22" cy="8" r="2"/><circle cx="8" cy="15" r="2"/><circle cx="22" cy="15" r="2"/><circle cx="8" cy="22" r="2"/><circle cx="15" cy="22" r="2"/><circle cx="22" cy="22" r="2"/></g><circle class="bm-peg" cx="15" cy="15" r="3.4"/></svg>
+      CoolWebToday
+    </a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav">
+        <li><a href="../werkstatt.html" aria-current="page">Toolwerkstatt</a></li>
+        <li><a href="../journeys.html">Journeys</a></li>
+        <li><a href="../index.html#vorhaben">Das Vorhaben</a></li>
+        <li><a class="ext" href="https://www.digitalpath.at/#labor" rel="noopener" target="_blank">digitalpath</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <p class="eyebrow"><a href="../werkstatt.html">Toolwerkstatt</a> · Werkzeug der Werkstatt</p>
+        <h1>Hürden-Logbuch</h1>
+        <p class="lead">Halte fest, wo du beim Ausprobieren hängen bleibst und was dir geholfen hat. Hängenbleiben sagt etwas über das Werkzeug und seine Erklärung, nicht über dich.</p>
+        <div class="notice local"><p><strong>Bleibt auf deinem Gerät.</strong> Einträge werden nur in diesem Browser gespeichert. Du entscheidest, ob du sie exportierst und weitergibst.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap tool-page">
+      <form class="panel" id="form" aria-labelledby="form-titel">
+        <h2 id="form-titel">Neuer Eintrag</h2>
+        <div class="field">
+          <label for="werkzeug">Welches Werkzeug?</label>
+          <input id="werkzeug" type="text" list="werkzeug-liste" autocomplete="off" required>
+          <datalist id="werkzeug-liste"></datalist>
+        </div>
+        <div class="field">
+          <label for="ziel">Was wolltest du erreichen?</label>
+          <textarea id="ziel" rows="2" required></textarea>
+        </div>
+        <div class="field">
+          <label for="ausgangslage">Ausgangslage</label>
+          <span class="help" id="ausgangslage-help">Was konntest du vorher schon, was war neu?</span>
+          <textarea id="ausgangslage" rows="2" aria-describedby="ausgangslage-help"></textarea>
+        </div>
+        <div class="field">
+          <label for="huerde">Wo bist du hängen geblieben?</label>
+          <textarea id="huerde" rows="3"></textarea>
+        </div>
+        <div class="field">
+          <label for="unterbrechung">Hast du unterbrochen?</label>
+          <select id="unterbrechung">
+            <option value="Nein">Nein</option>
+            <option value="Ja, kurz">Ja, kurz</option>
+            <option value="Ja, abgebrochen">Ja, abgebrochen</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="geholfen">Was hat geholfen?</label>
+          <span class="help" id="geholfen-help">Eine Erklärung, eine Person, ein Beispiel, eine Pause …</span>
+          <textarea id="geholfen" rows="2" aria-describedby="geholfen-help"></textarea>
+        </div>
+        <div class="field">
+          <label for="jetzt">Was kannst du jetzt, was vorher nicht ging?</label>
+          <textarea id="jetzt" rows="2"></textarea>
+        </div>
+        <div class="btn-row">
+          <button class="btn" type="submit">Eintrag speichern</button>
+        </div>
+        <p class="feedback" id="form-feedback" aria-live="polite"></p>
+      </form>
+
+      <div class="panel" aria-labelledby="liste-titel">
+        <h2 id="liste-titel">Deine Einträge</h2>
+        <p class="draft-banner" id="beispiel-hinweis" hidden><strong>Beispiel.</strong> So sieht ein Eintrag aus. Er verschwindet, sobald du deinen ersten eigenen Eintrag speicherst.</p>
+        <ul class="entries" id="eintraege"></ul>
+        <div class="btn-row">
+          <button class="btn small" type="button" id="kopieren">Als Text kopieren</button>
+          <button class="btn ghost small" type="button" id="md">Als Markdown speichern</button>
+          <button class="btn ghost small" type="button" id="csv">Als CSV speichern</button>
+          <button class="btn quiet small" type="button" id="alle-loeschen">Alle löschen</button>
+        </div>
+        <div class="confirm" id="loeschen-bestaetigen" hidden>
+          <span>Alle Einträge in diesem Browser löschen?</span>
+          <button class="btn small" type="button" id="loeschen-ja">Ja, löschen</button>
+          <button class="btn quiet small" type="button" id="loeschen-nein">Abbrechen</button>
+        </div>
+        <p class="feedback" id="feedback" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <p><strong>CoolWebToday</strong> ist ein Vorhaben von Claudiu Dangulea, Wien.</p>
+      <small>Diese Seite entstand mit KI-Unterstützung. Sie setzt keine Cookies, kein Tracking und lädt keine externen Dienste.</small>
+    </div>
+    <div>
+      <ul class="foot-links">
+        <li><a href="../impressum.html">Impressum</a></li>
+        <li><a href="../datenschutz.html">Datenschutz</a></li>
+        <li><a href="https://www.digitalpath.at" rel="noopener" target="_blank">digitalpath.at</a></li>
+      </ul>
+      <small>Stand: <span data-stand>25. Oktober 2026</span></small>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/site.js"></script>
+<script>
+(function () {
+  "use strict";
+  var KEY = "cwt.logbuch.v1";
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = CWT.esc;
+  var FELDER = [
+    ["werkzeug", "Werkzeug"], ["ziel", "Ziel"], ["ausgangslage", "Ausgangslage"], ["huerde", "Hürde"],
+    ["unterbrechung", "Unterbrechung"], ["geholfen", "Was geholfen hat"], ["jetzt", "Was jetzt möglich ist"]
+  ];
+  var BEISPIEL = {
+    zeit: "2026-10-20T16:30:00",
+    werkzeug: "RAWGraphs",
+    ziel: "Die Teilnahmezahlen unseres Vereins als Balkendiagramm zeigen.",
+    ausgangslage: "Tabelle in LibreOffice vorhanden, noch nie ein Diagramm-Werkzeug im Browser benutzt.",
+    huerde: "Das Einfügen der Daten hat nicht geklappt; die Spalten wurden nicht erkannt.",
+    unterbrechung: "Ja, kurz",
+    geholfen: "Die Tabelle ohne leere Zeilen und mit einer Kopfzeile neu kopiert.",
+    jetzt: "Ich kann ein Diagramm aus einer Tabelle erstellen und als Bild speichern."
+  };
+
+  function load() { return CWT.store.get(KEY, []); }
+  function save(list) { return CWT.store.set(KEY, list); }
+
+  function when(iso) {
+    try { return new Date(iso).toLocaleString("de-AT", { dateStyle: "medium", timeStyle: "short" }); }
+    catch (e) { return iso; }
+  }
+
+  function render() {
+    var list = load();
+    var beispiel = list.length === 0;
+    $("beispiel-hinweis").hidden = !beispiel;
+    var shown = beispiel ? [BEISPIEL] : list.slice().reverse();
+    $("eintraege").innerHTML = shown.map(function (e, idx) {
+      var rows = FELDER.filter(function (f) { return e[f[0]]; }).map(function (f) {
+        return '<dt>' + esc(f[1]) + '</dt><dd>' + esc(e[f[0]]) + '</dd>';
+      }).join("");
+      var del = beispiel ? "" : '<button class="btn quiet small" type="button" data-del="' + esc(e.zeit) + '">Eintrag löschen</button>';
+      return '<li class="entry"><span class="when">' + esc(when(e.zeit)) + (beispiel ? " · Beispiel" : "") + '</span><dl>' + rows + '</dl>' + del + '</li>';
+    }).join("");
+    ["kopieren", "md", "csv", "alle-loeschen"].forEach(function (id) { $(id).disabled = beispiel; });
+  }
+
+  function asMarkdown(list) {
+    var out = ["# Hürden-Logbuch", ""];
+    list.forEach(function (e) {
+      out.push("## " + (e.werkzeug || "Werkzeug") + " – " + when(e.zeit));
+      FELDER.slice(1).forEach(function (f) { if (e[f[0]]) out.push("- **" + f[1] + ":** " + e[f[0]]); });
+      out.push("");
+    });
+    out.push("_Erstellt mit dem Hürden-Logbuch von CoolWebToday._");
+    return out.join("\n");
+  }
+
+  function asCSV(list) {
+    var head = ["Zeitpunkt"].concat(FELDER.map(function (f) { return f[1]; }));
+    var q = function (v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; };
+    var rows = list.map(function (e) { return [e.zeit].concat(FELDER.map(function (f) { return e[f[0]]; })).map(q).join(";"); });
+    return "﻿" + [head.map(q).join(";")].concat(rows).join("\r\n");
+  }
+
+  CWT.loadJSON("data/werkzeuge.json").then(function (d) {
+    var names = (d.eigene || []).map(function (w) { return w.name; }).concat((d.werkzeuge || []).map(function (w) { return w.name; }));
+    $("werkzeug-liste").innerHTML = names.map(function (n) { return '<option value="' + esc(n) + '"></option>'; }).join("");
+  }).catch(function () {});
+
+  $("form").addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var e = { zeit: new Date().toISOString() };
+    FELDER.forEach(function (f) { e[f[0]] = $(f[0]).value.trim(); });
+    var list = load(); list.push(e);
+    if (save(list)) {
+      $("form").reset();
+      $("form-feedback").textContent = "Eintrag gespeichert.";
+      render();
+      $("werkzeug").focus();
+    } else {
+      $("form-feedback").textContent = "Speichern war in diesem Browser nicht möglich, etwa im privaten Modus. Kopiere den Text vorher.";
+    }
+  });
+
+  $("eintraege").addEventListener("click", function (ev) {
+    var b = ev.target.closest("[data-del]");
+    if (!b) return;
+    save(load().filter(function (e) { return e.zeit !== b.getAttribute("data-del"); }));
+    $("feedback").textContent = "Eintrag gelöscht.";
+    render();
+  });
+
+  $("kopieren").addEventListener("click", function () { CWT.copy(asMarkdown(load()), $("feedback")); });
+  $("md").addEventListener("click", function () { CWT.download("huerden-logbuch.md", asMarkdown(load()), "text/markdown", $("feedback")); });
+  $("csv").addEventListener("click", function () { CWT.download("huerden-logbuch.csv", asCSV(load()), "text/csv", $("feedback")); });
+  $("alle-loeschen").addEventListener("click", function () { $("loeschen-bestaetigen").hidden = false; $("loeschen-ja").focus(); });
+  $("loeschen-nein").addEventListener("click", function () { $("loeschen-bestaetigen").hidden = true; });
+  $("loeschen-ja").addEventListener("click", function () {
+    CWT.store.remove(KEY); $("loeschen-bestaetigen").hidden = true; $("feedback").textContent = "Alle Einträge gelöscht."; render();
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+{
+  "stand": "2026-10-25",
+  "grundsatz": "Jede Station ist ein Angebot. Du kannst Stationen überspringen, die Reihenfolge ändern, zu freiem Ausprobieren wechseln oder aufhören. Es gibt keine Prüfung und keine Bewertung.",
+  "ermaessigung": "Für Menschen mit geringem Einkommen sind Gutscheine oder geförderte Plätze geplant.",
+  "journeys": [
+    {
+      "id": "idee-klaeren",
+      "titel": "Eine Idee klären",
+      "fuerWen": "Für alle, die eine Idee haben und noch nicht wissen, wo sie anfangen sollen.",
+      "danach": "Du hast einen Steckbrief deiner Idee und einen ersten Schritt, den du in einer Woche schaffen kannst.",
+      "dauer": "ca. 2 Stunden",
+      "format": "Einzeln oder in einer Kleingruppe, begleitet",
+      "status": "entwurf",
+      "preis": null,
+      "stationen": [
+        {
+          "titel": "Die Idee in eigenen Worten aufschreiben",
+          "text": "Welche Frage steht am Anfang? Für wen ist die Idee gedacht?",
+          "werkzeuge": ["steckbrief"]
+        },
+        {
+          "titel": "Annahmen sichtbar machen",
+          "text": "Zeichne auf, wer beteiligt ist und was du über diese Menschen annimmst.",
+          "werkzeuge": ["excalidraw"]
+        },
+        {
+          "titel": "Den ersten kleinen Schritt wählen",
+          "text": "Welcher Schritt zeigt am schnellsten, ob eine Annahme stimmt?",
+          "werkzeuge": ["steckbrief"]
+        },
+        {
+          "titel": "Rückschau",
+          "text": "Was ist jetzt klarer als vorher? Was bleibt offen?",
+          "werkzeuge": []
+        }
+      ]
+    },
+    {
+      "id": "mit-ki-arbeiten",
+      "titel": "Mit KI an der eigenen Idee arbeiten",
+      "fuerWen": "Für Menschen, die KI-Assistenten nutzen möchten, ohne ihnen blind zu vertrauen.",
+      "danach": "Du kannst einen klaren Auftrag formulieren, ein lokales und ein Online-Werkzeug vergleichen und Ergebnisse selbst prüfen.",
+      "dauer": "ca. 3 Stunden",
+      "format": "Einzeln oder in einer Kleingruppe, begleitet",
+      "status": "entwurf",
+      "preis": null,
+      "stationen": [
+        {
+          "titel": "Einen Auftrag formulieren",
+          "text": "Was soll entstehen, für wen, und woran erkennst du ein gutes Ergebnis?",
+          "werkzeuge": ["ki-auftrag"]
+        },
+        {
+          "titel": "Lokal und online vergleichen",
+          "text": "Derselbe Auftrag an ein Modell auf deinem Rechner und an einen Online-Dienst.",
+          "werkzeuge": ["lm-studio", "le-chat"]
+        },
+        {
+          "titel": "Ergebnisse prüfen",
+          "text": "Stimmen Fakten und Quellen? Was hättest du ohne KI anders gemacht?",
+          "werkzeuge": ["logbuch"]
+        },
+        {
+          "titel": "KI-Nutzung offenlegen",
+          "text": "Wie sagst du anderen, wo KI mitgearbeitet hat?",
+          "werkzeuge": []
+        }
+      ]
+    },
+    {
+      "id": "ablauf-automatisieren",
+      "titel": "Einen wiederkehrenden Ablauf automatisieren",
+      "fuerWen": "Für Selbstständige, Vereine und kleine Teams mit Aufgaben, die sich jede Woche wiederholen.",
+      "danach": "Ein kleiner Ablauf läuft automatisch, und du weißt, wo seine Grenzen liegen.",
+      "dauer": "ca. 3 Stunden",
+      "format": "Einzeln oder in einer Kleingruppe, begleitet",
+      "status": "entwurf",
+      "preis": null,
+      "stationen": [
+        {
+          "titel": "Den Ablauf aufzeichnen",
+          "text": "Welche Schritte machst du heute von Hand, und in welcher Reihenfolge?",
+          "werkzeuge": ["drawio"]
+        },
+        {
+          "titel": "Das passende Werkzeug wählen",
+          "text": "Auf dem Telefon, auf dem eigenen Rechner oder als Online-Dienst?",
+          "werkzeuge": ["kurzbefehle", "n8n", "make"]
+        },
+        {
+          "titel": "Bauen und testen",
+          "text": "Erst mit Beispieldaten, dann mit echten.",
+          "werkzeuge": ["kurzbefehle", "n8n"]
+        },
+        {
+          "titel": "Hürden festhalten",
+          "text": "Wo bist du hängen geblieben, und was hat geholfen?",
+          "werkzeuge": ["logbuch"]
+        }
+      ]
+    },
+    {
+      "id": "daten-verstehen",
+      "titel": "Aus Daten eine Antwort gewinnen",
+      "fuerWen": "Für Menschen mit einer Tabelle und einer Frage dazu.",
+      "danach": "Du hast eine Frage an deine Daten beantwortet und das Ergebnis in einem Diagramm gezeigt.",
+      "dauer": "ca. 2,5 Stunden",
+      "format": "Einzeln oder in einer Kleingruppe, begleitet",
+      "status": "entwurf",
+      "preis": null,
+      "stationen": [
+        {
+          "titel": "Die Frage schärfen",
+          "text": "Was genau willst du wissen, und welche Spalten brauchst du dafür?",
+          "werkzeuge": ["steckbrief"]
+        },
+        {
+          "titel": "Die Tabelle aufräumen",
+          "text": "Leere Zeilen, doppelte Einträge, uneinheitliche Schreibweisen.",
+          "werkzeuge": ["libreoffice"]
+        },
+        {
+          "titel": "Ein Diagramm gestalten",
+          "text": "Welche Darstellung beantwortet deine Frage am direktesten?",
+          "werkzeuge": ["rawgraphs"]
+        },
+        {
+          "titel": "Das Ergebnis gegenprüfen",
+          "text": "Würde jemand anderes mit denselben Daten zum selben Schluss kommen?",
+          "werkzeuge": ["knime"]
+        }
+      ]
+    },
+    {
+      "id": "wissen-ordnen",
+      "titel": "Wissen zur Idee ordnen",
+      "fuerWen": "Für alle, deren Notizen, Links und Quellen über viele Orte verstreut sind.",
+      "danach": "Deine Notizen und Quellen liegen an einem Ort, und du kannst sie mit anderen teilen.",
+      "dauer": "ca. 2 Stunden",
+      "format": "Einzeln oder in einer Kleingruppe, begleitet",
+      "status": "entwurf",
+      "preis": null,
+      "stationen": [
+        {
+          "titel": "Sammeln",
+          "text": "Was gehört zur Idee, und wo liegt es heute?",
+          "werkzeuge": ["obsidian", "joplin"]
+        },
+        {
+          "titel": "Quellen festhalten",
+          "text": "Woher stammt eine Information, und wie zitierst du sie?",
+          "werkzeuge": ["zotero"]
+        },
+        {
+          "titel": "Gemeinsam weiterschreiben",
+          "text": "Ein Dokument, an dem andere mitarbeiten können.",
+          "werkzeuge": ["cryptpad"]
+        }
+      ]
+    },
+    {
+      "id": "prototyp-bauen",
+      "titel": "Einen klickbaren Prototyp bauen und testen",
+      "fuerWen": "Für Menschen mit einer Idee für eine App, ein Formular oder eine Webseite.",
+      "danach": "Du hast einen klickbaren Entwurf, den zwei Menschen ausprobiert haben, und weißt, was du ändern willst.",
+      "dauer": "ca. 4 Stunden, auf zwei Termine verteilt",
+      "format": "Einzeln oder in einer Kleingruppe, begleitet",
+      "status": "entwurf",
+      "preis": null,
+      "stationen": [
+        {
+          "titel": "Skizzieren",
+          "text": "Die wichtigsten Bildschirme auf Papier oder im Browser.",
+          "werkzeuge": ["excalidraw"]
+        },
+        {
+          "titel": "Klickbar machen",
+          "text": "Aus der Skizze wird ein Entwurf, den man bedienen kann.",
+          "werkzeuge": ["penpot"]
+        },
+        {
+          "titel": "Mit Menschen testen",
+          "text": "Zwei Personen probieren den Entwurf aus. Du notierst, wo sie zögern.",
+          "werkzeuge": ["logbuch"]
+        },
+        {
+          "titel": "Barrieren prüfen",
+          "text": "Kann man den Entwurf mit der Tastatur und mit einem Screenreader nutzen?",
+          "werkzeuge": ["wave", "nvda"]
+        }
+      ]
+    }
+  ]
+}

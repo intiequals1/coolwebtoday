@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="de" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KI-Auftrag-Baukasten · CoolWebToday</title>
+<meta name="description" content="Formuliere einen klaren Auftrag an einen KI-Assistenten und lege vorher fest, woran du das Ergebnis prüfst. Läuft nur in deinem Browser.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <svg class="brand-mark" viewBox="0 0 30 30" aria-hidden="true" focusable="false"><rect class="bm-board" x="1" y="1" width="28" height="28" rx="5"/><g class="bm-holes"><circle cx="8" cy="8" r="2"/><circle cx="15" cy="8" r="2"/><circle cx="22" cy="8" r="2"/><circle cx="8" cy="15" r="2"/><circle cx="22" cy="15" r="2"/><circle cx="8" cy="22" r="2"/><circle cx="15" cy="22" r="2"/><circle cx="22" cy="22" r="2"/></g><circle class="bm-peg" cx="15" cy="15" r="3.4"/></svg>
+      CoolWebToday
+    </a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav">
+        <li><a href="../werkstatt.html" aria-current="page">Toolwerkstatt</a></li>
+        <li><a href="../journeys.html">Journeys</a></li>
+        <li><a href="../index.html#vorhaben">Das Vorhaben</a></li>
+        <li><a class="ext" href="https://www.digitalpath.at/#labor" rel="noopener" target="_blank">digitalpath</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <p class="eyebrow"><a href="../werkstatt.html">Toolwerkstatt</a> · Werkzeug der Werkstatt</p>
+        <h1>KI-Auftrag-Baukasten</h1>
+        <p class="lead">Ein klarer Auftrag liefert brauchbarere Ergebnisse. Lege fest, was entstehen soll, und vorher, woran du das Ergebnis prüfst. Den fertigen Auftrag kopierst du in einen KI-Assistenten deiner Wahl.</p>
+        <div class="notice local"><p><strong>Bleibt auf deinem Gerät.</strong> Der Baukasten sendet nichts an eine KI. Erst wenn du den Text selbst einfügst, verlässt er dein Gerät.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap tool-page">
+      <form class="panel" id="form" aria-labelledby="form-titel">
+        <h2 id="form-titel">Dein Auftrag</h2>
+        <p class="draft-banner" id="beispiel-hinweis" hidden><strong>Beispiel.</strong> Überschreib die Felder oder starte leer.</p>
+        <div class="field">
+          <label for="ziel">Was soll entstehen?</label>
+          <textarea id="ziel" rows="2"></textarea>
+        </div>
+        <div class="field">
+          <label for="fuer">Für wen ist das Ergebnis?</label>
+          <input id="fuer" type="text" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="kontext">Was muss die KI wissen?</label>
+          <span class="help" id="kontext-help">Hintergrund, den sie nicht kennen kann. Keine Namen oder Daten anderer Menschen.</span>
+          <textarea id="kontext" aria-describedby="kontext-help"></textarea>
+        </div>
+        <div class="filter-grid">
+          <div class="field">
+            <label for="form-art">Form des Ergebnisses</label>
+            <select id="form-art">
+              <option>Fließtext</option>
+              <option>Stichpunkte</option>
+              <option>Tabelle</option>
+              <option>Schritt-für-Schritt-Anleitung</option>
+              <option>E-Mail-Entwurf</option>
+              <option>Drei Varianten zur Auswahl</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="umfang">Umfang</label>
+            <input id="umfang" type="text" placeholder="z. B. höchstens 120 Wörter" autocomplete="off">
+          </div>
+        </div>
+        <div class="field">
+          <label for="grenzen">Was soll die KI nicht tun?</label>
+          <textarea id="grenzen" rows="2"></textarea>
+        </div>
+        <div class="field">
+          <label for="pruefung">Woran erkennst du ein gutes Ergebnis?</label>
+          <span class="help" id="pruefung-help">Lege das fest, bevor du die Antwort liest.</span>
+          <textarea id="pruefung" rows="3" aria-describedby="pruefung-help"></textarea>
+        </div>
+        <label class="toggle"><input type="checkbox" id="rueckfragen" checked> Rückfragen stellen, wenn etwas unklar ist</label>
+        <label class="toggle"><input type="checkbox" id="unsicher" checked> Unsichere Stellen kennzeichnen und Quellen nennen</label>
+        <div class="btn-row">
+          <button class="btn quiet small" type="button" id="leeren">Leeren</button>
+          <button class="btn quiet small" type="button" id="beispiel">Beispiel laden</button>
+        </div>
+      </form>
+
+      <div class="panel" aria-labelledby="out-titel">
+        <h2 id="out-titel">Fertiger Auftrag</h2>
+        <pre class="output" id="ausgabe" tabindex="0" aria-label="Fertiger Auftrag zum Kopieren"></pre>
+        <div class="btn-row">
+          <button class="btn small" type="button" id="kopieren">Auftrag kopieren</button>
+        </div>
+        <p class="feedback" id="feedback" aria-live="polite"></p>
+        <h3>Vor dem Absenden</h3>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> Keine Namen, Adressen oder Gesundheitsdaten anderer Menschen im Text</label></li>
+          <li><label><input type="checkbox"> Keine Passwörter, Kontodaten oder Zugangscodes</label></li>
+          <li><label><input type="checkbox"> Sensible Inhalte lieber mit einem lokalen Modell bearbeiten, etwa <a href="../werkstatt.html#tool-lm-studio">LM Studio</a> oder <a href="../werkstatt.html#tool-ollama">Ollama</a></label></li>
+          <li><label><input type="checkbox"> Die Antwort anhand deiner Prüfpunkte lesen, Fakten und Quellen selbst nachsehen</label></li>
+          <li><label><input type="checkbox"> Wenn du das Ergebnis weitergibst: sagen, dass KI mitgearbeitet hat</label></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <p><strong>CoolWebToday</strong> ist ein Vorhaben von Claudiu Dangulea, Wien.</p>
+      <small>Diese Seite entstand mit KI-Unterstützung. Sie setzt keine Cookies, kein Tracking und lädt keine externen Dienste.</small>
+    </div>
+    <div>
+      <ul class="foot-links">
+        <li><a href="../impressum.html">Impressum</a></li>
+        <li><a href="../datenschutz.html">Datenschutz</a></li>
+        <li><a href="https://www.digitalpath.at" rel="noopener" target="_blank">digitalpath.at</a></li>
+      </ul>
+      <small>Stand: <span data-stand>25. Oktober 2026</span></small>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/site.js"></script>
+<script>
+(function () {
+  "use strict";
+  var KEY = "cwt.ki-auftrag.v1";
+  var $ = function (id) { return document.getElementById(id); };
+  var TEXT = ["ziel", "fuer", "kontext", "form-art", "umfang", "grenzen", "pruefung"];
+  var CHECK = ["rueckfragen", "unsicher"];
+  var BEISPIEL = {
+    ziel: "Einen kurzen Aushang, der zu einem offenen Werkstatt-Nachmittag in unserer Bücherei einlädt.",
+    fuer: "Menschen jeden Alters, die wenig Erfahrung mit digitalen Werkzeugen haben",
+    kontext: "Der Nachmittag ist kostenlos und ohne Anmeldung. Man kann Werkzeuge ausprobieren, ohne etwas können zu müssen. Er findet an einem Samstag von 14 bis 17 Uhr statt.",
+    "form-art": "Drei Varianten zur Auswahl",
+    umfang: "je höchstens 60 Wörter",
+    grenzen: "Keine Fachbegriffe wie Cloud oder App. Nichts versprechen, was nicht stimmt.",
+    pruefung: "Eine Person ohne Vorwissen versteht in 10 Sekunden, worum es geht, wann es ist und dass es nichts kostet.",
+    rueckfragen: true, unsicher: true, beispiel: true
+  };
+
+  function read() {
+    var d = {};
+    TEXT.forEach(function (f) { d[f] = $(f).value; });
+    CHECK.forEach(function (f) { d[f] = $(f).checked; });
+    return d;
+  }
+  function write(d) {
+    TEXT.forEach(function (f) { if ($(f).tagName === "SELECT") { $(f).value = d[f] || $(f).options[0].value; } else { $(f).value = d[f] || ""; } });
+    CHECK.forEach(function (f) { $(f).checked = d[f] !== false; });
+    $("beispiel-hinweis").hidden = !d.beispiel;
+  }
+
+  function build(d) {
+    var t = function (s) { return (s || "").trim(); };
+    var out = ["Ich brauche deine Hilfe bei folgender Aufgabe.", ""];
+    out.push("Ziel: " + (t(d.ziel) || "[bitte ergänzen]"));
+    if (t(d.fuer)) out.push("Für wen: " + t(d.fuer));
+    if (t(d.kontext)) { out.push(""); out.push("Hintergrund: " + t(d.kontext)); }
+    out.push("");
+    out.push("Form des Ergebnisses: " + d["form-art"] + (t(d.umfang) ? ", " + t(d.umfang) : ""));
+    if (t(d.grenzen)) out.push("Bitte nicht: " + t(d.grenzen));
+    if (t(d.pruefung)) out.push("Ein gutes Ergebnis erkenne ich daran: " + t(d.pruefung));
+    var extra = [];
+    if (d.rueckfragen) extra.push("Wenn etwas unklar ist, stell mir zuerst Rückfragen, bevor du loslegst.");
+    if (d.unsicher) extra.push("Kennzeichne Stellen, bei denen du unsicher bist, und nenne Quellen, wenn du Fakten angibst.");
+    if (extra.length) { out.push(""); out = out.concat(extra); }
+    return out.join("\n");
+  }
+
+  function update(save) {
+    var d = read();
+    $("ausgabe").textContent = build(d);
+    if (save) { $("beispiel-hinweis").hidden = true; CWT.store.set(KEY, d); }
+  }
+
+  write(CWT.store.get(KEY, null) || BEISPIEL);
+  update(false);
+
+  $("form").addEventListener("input", function () { update(true); });
+  $("form").addEventListener("change", function () { update(true); });
+  $("form").addEventListener("submit", function (e) { e.preventDefault(); });
+  $("beispiel").addEventListener("click", function () { write(BEISPIEL); update(false); CWT.store.remove(KEY); });
+  $("leeren").addEventListener("click", function () {
+    write({ rueckfragen: true, unsicher: true }); CWT.store.remove(KEY); update(false);
+    $("feedback").textContent = "Formular geleert."; $("ziel").focus();
+  });
+  $("kopieren").addEventListener("click", function () { CWT.copy($("ausgabe").textContent, $("feedback"), $("ausgabe")); });
+})();
+</script>
+</body>
+</html>
