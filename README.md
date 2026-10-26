@@ -87,6 +87,6 @@ Hinweis: coolwebtoday.org leitet derzeit von https auf http um. Nach der Umstell
 ## Vor dem Livegang
 
 - [ ] Impressum, Datenschutz, AGB und Widerrufsbelehrung rechtlich prüfen lassen
-- [ ] Journey-Preise bestätigen (abgeleitet aus der Preisspanne im Antrag, 49 bis 120 € pro Person)
+- [ ] Journey-Preise bestätigen (derzeit 49 bis 120 € pro Person)
 - [ ] Journey-Inhalte und Dauer prüfen und bei Bedarf in `data/journeys.json` anpassen
 - [ ] Werkzeugkatalog: Einträge einmal selbst gegenprüfen
