@@ -101,6 +101,36 @@
   var siteReady = loadJSON("data/site.json").then(function (site) { fillSite(site); return site; })
     .catch(function () { fillSite(null); return null; });
 
+  /* Datenschutzhinweis: informiert und fragt keine Einwilligung ab, weil die Seite keine
+     Cookies, kein Tracking und keine externen Dienste nutzt. Gespeichert wird nur, dass der
+     Hinweis geschlossen wurde (Schlüssel siehe NOTICE_KEY, beschrieben in datenschutz.html). */
+  var NOTICE_KEY = "cwt.datenschutzhinweis.v1";
+
+  function privacyNotice() {
+    var closed = null;
+    try { closed = window.localStorage.getItem(NOTICE_KEY); } catch (e) { closed = null; }
+    if (closed === "geschlossen" || !document.body) return;
+    var box = document.createElement("aside");
+    box.className = "privacy-notice";
+    box.setAttribute("aria-label", "Datenschutzhinweis");
+    box.innerHTML =
+      '<p>Diese Seite setzt keine Cookies und kein Tracking ein und lädt keine externen Dienste. ' +
+      'Was du in die Werkzeuge eingibst, bleibt in deinem Browser. Schließt du diesen Hinweis, ' +
+      'wird nur das in deinem Browser vermerkt.</p>' +
+      '<div class="privacy-notice-actions"><a href="' + esc(url("datenschutz.html")) + '">Datenschutz</a>' +
+      '<button type="button" class="btn small">Verstanden</button></div>';
+    document.body.appendChild(box);
+    document.body.style.paddingBottom = (box.offsetHeight + 24) + "px";
+    box.querySelector("button").addEventListener("click", function () {
+      try { window.localStorage.setItem(NOTICE_KEY, "geschlossen"); } catch (e) { /* nur für diesen Aufruf */ }
+      box.parentNode.removeChild(box);
+      document.body.style.paddingBottom = "";
+    });
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", privacyNotice);
+  else privacyNotice();
+
   window.CWT = {
     url: url, loadJSON: loadJSON, esc: esc, store: store, copy: copy,
     download: download, formatDate: formatDate, slug: slug, site: siteReady
