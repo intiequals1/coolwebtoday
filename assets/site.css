@@ -388,3 +388,17 @@ a.tag:hover, a.tag:focus-visible { --tilt: 0deg; }
 .orte span { font-family: var(--mono); font-size: 0.75rem; color: var(--ink-soft); }
 .unterstuetzen { margin: 0 0 0.6rem; font-size: var(--step--1); color: var(--ink-soft); }
 .tags li:nth-child(5) .tag { --tilt: -1.6deg; }
+
+/* Datenschutzhinweis (assets/site.js): Information ohne Einwilligungsabfrage */
+.privacy-notice {
+  position: fixed; z-index: 50; right: 1rem; bottom: 1rem; left: 1rem;
+  max-width: 34rem; margin-left: auto;
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(20, 32, 43, .14);
+  padding: 1rem 1.1rem; font-size: var(--step--1); line-height: 1.5;
+}
+.privacy-notice p { margin: 0 0 .75rem; }
+.privacy-notice-actions { display: flex; align-items: center; justify-content: flex-end; gap: 1rem; flex-wrap: wrap; }
+.privacy-notice-actions a { color: var(--accent); }
+@media print { .privacy-notice { display: none; } }

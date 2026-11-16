@@ -1,6 +1,6 @@
 # CoolWebToday – Website mit Toolwerkstatt
 
-Statische Website für www.coolwebtoday.org. Kein Build-Schritt, keine externen Dienste, keine Cookies.
+Statische Website für www.coolwebtoday.org. Kein Build-Schritt, keine externen Dienste, keine Cookies. Ein Datenschutzhinweis ohne Einwilligungsabfrage merkt sich nur sein Schließen im localStorage (`cwt.datenschutzhinweis.v1`); Änderungen und Gründe stehen in `CHANGELOG.md`.
 
 ## Aufbau
 
