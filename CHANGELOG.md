@@ -15,3 +15,13 @@
 - Der Hinweis wurde auf Wunsch des Betreibers für alle Seiten einheitlich eingeführt. Damit sehen Besucherinnen und Besucher sofort, dass nichts nachverfolgt wird, und finden die Datenschutzerklärung mit einem Klick.
 - Eine Einwilligung wird bewusst nicht abgefragt. Die Seite setzt nichts ein, was eine Einwilligung erfordert. Ein „Akzeptieren“-Knopf würde etwas anderes suggerieren (vgl. DSB-FAQ zu Cookies: Einwilligung nur für technisch nicht notwendige Cookies und vergleichbare Speicherungen).
 - Das Schließen wird gemerkt, damit der Hinweis nicht bei jedem Seitenaufruf wiederkommt. Diese Speicherung selbst ist in der Datenschutzerklärung offengelegt.
+
+## 2026-11-16 – Verweis auf die ePrivacy-Richtlinie
+
+### Was geändert wurde
+
+- Datenschutzerklärung, Abschnitt „Datenschutzhinweis“: Neben § 165 Abs. 3 TKG 2021 steht jetzt auch die zugrunde liegende EU-Norm, Art. 5 Abs. 3 der ePrivacy-Richtlinie 2002/58/EG.
+
+### Warum
+
+- Auf Hinweis des Betreibers. § 165 Abs. 3 TKG 2021 setzt die Vorgabe der ePrivacy-Richtlinie für das Speichern von Informationen im Endgerät in österreichisches Recht um. Der Doppelverweis macht für Leserinnen und Leser außerhalb Österreichs nachvollziehbar, auf welcher Regel die einwilligungsfreie Speicherung beruht.
