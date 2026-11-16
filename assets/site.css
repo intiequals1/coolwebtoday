@@ -402,3 +402,8 @@ a.tag:hover, a.tag:focus-visible { --tilt: 0deg; }
 .privacy-notice-actions { display: flex; align-items: center; justify-content: flex-end; gap: 1rem; flex-wrap: wrap; }
 .privacy-notice-actions a { color: var(--accent); }
 @media print { .privacy-notice { display: none; } }
+
+/* Hinweis zum Entwicklungsstand */
+.site-notice { border-bottom: 1px solid var(--line); background: var(--board); color: var(--ink-soft); font-size: var(--step--1); line-height: 1.5; padding: 0.6rem 1.25rem; }
+.site-notice p { max-width: 72rem; margin: 0 auto; }
+.site-notice strong { color: var(--ink); }
